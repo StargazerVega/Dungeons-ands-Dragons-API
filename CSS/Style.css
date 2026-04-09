@@ -1,0 +1,19 @@
+:root {
+    --mainBGColor: #2d3140;
+    --secondBGColor: #1f222e;
+    --titleTextColor: #d29a38;
+    --mainTextColor: #c2c2c2;
+    --linkColor: #7ab1e2;
+}
+
+* {
+    background-color: var(--mainBGColor);
+}
+
+/* body.light {
+
+}
+
+body.dark {
+
+} */
