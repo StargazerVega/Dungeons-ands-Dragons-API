@@ -1,13 +1,51 @@
 :root {
-    --mainBGColor: #2d3140;
-    --secondBGColor: #1f222e;
-    --titleTextColor: #d29a38;
-    --mainTextColor: #c2c2c2;
-    --linkColor: #7ab1e2;
+    /* DARK COLORS */
+    --DmainBGColor: #2d3140;
+    --DsecondBGColor: #1f222e;
+    --DtitleTextColor: #d29a38;
+    --DmainTextColor: #c2c2c2;
+    --DlinkColor: #7ab1e2;
+
+    /* LIGHT COLORS */
+    --LmainBGColor: #ced9eb;
+    --LsecondBGColor: #edf4ff;
+    --LtitleTextColor: #e40712;
+    --LmainTextColor: #290404;
+    --LlinkColor: #44cf85;
 }
 
-* {
-    background-color: var(--mainBGColor);
+/* DARK MODE */
+
+body.dark {
+    background-color: var(--DsecondBGColor);
+}
+
+body.dark > *{
+    background-color: var(--DmainBGColor);
+    color: var(--DmainTextColor);
+}
+
+body.dark > a {
+    color: var(--DlinkColor);
+}
+
+body.dark > .title {
+    color: var(--DtitleTextColor);
+}
+
+/* LIGHT MODE */
+
+body.light {
+    background-color: var(--LsecondBGColor);
+}
+
+body.light > * {
+    background-color: var(--LmainBGColor);
+    color: var(--LmainTextColor);
+}
+
+body.light > .title {
+    color: var(--LtitleTextColor)
 }
 
 /* body.light {
