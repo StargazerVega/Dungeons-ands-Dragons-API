@@ -33,6 +33,27 @@ body.dark > .title {
     color: var(--DtitleTextColor);
 }
 
+.btn {
+    background-color: var(--DmainBGColor);
+    color: var(--DmainTextColor);
+    border:none;
+}
+.btn:hover {
+    background-color: var(--DlinkColor);
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.6);
+    transform: scale(1.02);
+}
+.btn:active {
+    background-color: var(--DtitleTextColor);
+}
+
+
+
+
+
+
+
+
 /* LIGHT MODE */
 
 body.light {

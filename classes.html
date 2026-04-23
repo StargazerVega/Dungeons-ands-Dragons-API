@@ -30,19 +30,63 @@
             </ul>
         </div>
     </nav>
-    <div class="container py-2">
-        <div class="row text-center">
-            <h1></h1>
-        </div>
-    </div>
 
-    <!-- JQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <main>
+        <section class="btns-cont m-4">
+            <button class="filter" data-filter="*">All</button>
+            <button class="filter" data-filter=".martial">Martial</button>
+            <button class="filter" data-filter=".caster">Caster</button>
+            <button class="filter" data-filter=".half-caster">Half-caster</button>
+        </section>
+
+        <section class="container py-5">
+            <div id="classesCont" class="row justify-content-center g-4 d-flex">
+                <!-- Espacio para cargar las clases -->
+
+                    <div class="classes col-2">
+                        <div class="card">
+                            <img src="/ASSETS/IMG/BarbarianIMG.png" class="card-img-top" alt="BarbarianIMG">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">${name}</h5>
+                                <p class="card-text"><span class="class-hitDie">${hitDie}</span></p>
+                                <p class="card-text"><span class="class-Proficiency-1">${saveProficiency1}</span> & <span></span class="class-Proficiency-1">${saveProficiency2}></p>
+                                <a href="#" class="btn selectClassBtn">Select class</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="levelUpCont py-5">
+            <div class="">
+
+            </div>
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- JQUERY -->
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+
     <!-- ISOTOPE  -->
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
     <!-- API CALL SCRIPT -->
-    <script src="js/listPokemon.js"></script>
+    <script src="js/listClasses.js"></script>
 
     <!-- MI PROPIO JS -->
     <script src="js/Script.js"></script>
