@@ -1,0 +1,27 @@
+:root {
+    --mainBGColor: #2d3140;
+    --secondBGColor: #1f222e;
+    --titleTextColor: #d29a38;
+    --mainTextColor: #c2c2c2;
+    --linkColor: #7ab1e2;
+}
+
+* {
+    background-color: var(--mainBGColor);
+}
+
+.logo-navbar {
+  height: 50px;
+  width: auto;
+}
+.logoMain {
+  max-width: 300px;
+  filter: drop-shadow(0 0 10px black);
+}
+/* body.light {
+
+}
+
+body.dark {
+
+} */
