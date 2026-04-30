@@ -18,6 +18,20 @@
   max-width: 300px;
   filter: drop-shadow(0 0 10px black);
 }
+.LogoVuelta {
+    height: 40px;   /* ajusta entre 30–60px a gusto */
+    width: auto;
+}
+.logoMain {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* ajusta tamaño */
+    z-index: 2;
+     background: transparent;
+}
+
 /* body.light {
 
 }
