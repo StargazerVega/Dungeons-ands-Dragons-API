@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     const video = document.getElementById("bgVideo");
 
@@ -18,3 +19,4 @@ document.addEventListener("DOMContentLoaded", () => {
         video.play();
     });
 });
+

@@ -27,9 +27,25 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px; /* ajusta tamaño */
+    width: 5000px; /* ajusta tamaño  noo furrula*/
     z-index: 2;
      background: transparent;
+}
+section {
+    position: relative;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.5); /* ajusta el 0.5 */
+    z-index: 1;
 }
 
 /* body.light {
