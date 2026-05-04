@@ -6,10 +6,17 @@
     --linkColor: #7ab1e2;
 }
 
-* {
+body {
     background-color: var(--mainBGColor);
+    color: var(--mainTextColor);
+}
+h1, h2 {
+    color: var(--titleTextColor);
 }
 
+p {
+    color: var(--mainTextColor);
+}
 .logo-navbar {
   height: 50px;
   width: auto;
@@ -44,7 +51,9 @@ section::before {
     width: 100%;
     height: 100%;
 
-    background: rgba(0, 0, 0, 0.5); /* ajusta el 0.5 */
+    section::before {
+    background: rgba(0, 0, 0, 0.6);
+}
     z-index: 1;
 }
 
@@ -55,3 +64,92 @@ section::before {
 body.dark {
 
 } */
+ .hero-content {
+    background-color: transparent;
+ }
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Fondo */
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Capa oscura */
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+/* Contenido encima */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Cards */
+.card-custom {
+  position: relative;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: left;
+
+  width: 100%;
+  min-height: 250px;   /* 🔥 altura fija más grande */
+  max-width: 500px;   /* controla tamaño */
+}
+
+.card-img {
+  position: absolute;
+  right: -40px;   /* sobresale un poco */
+  bottom: 0;
+  z-index: 1;
+}
+
+.img-card {
+  height: 260px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* separación bonita */
+}
+.card-custom:hover .img-card {
+  transform: scale(1.1) translateY(-10px);
+}
+
+.card-custom {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-custom:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+/* Colores */
+.card-dark {
+  background: rgba(31, 34, 46, 0.8); /* basado en secondBGColor */
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card-gold {
+  background: linear-gradient(
+    135deg,
+    #d29a38,
+    #8c6b2a
+  );
+  color: white;
+}
