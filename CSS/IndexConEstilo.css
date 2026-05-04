@@ -115,10 +115,12 @@ body.dark {
   right: -40px;   /* sobresale un poco */
   bottom: 0;
   z-index: 1;
+  display: flex;
+  
 }
 
 .img-card {
-  height: 260px;
+
   object-fit: contain;
   transition: transform 0.4s ease;
 }
@@ -152,4 +154,23 @@ body.dark {
     #8c6b2a
   );
   color: white;
+}
+.videos-section {
+  background-color: var(--secondBGColor);
+  border-top: 2px solid var(--titleTextColor);
+  padding: 60px 20px;
+  border-radius: 10px;
+}
+.videos-section h2 {
+  color: var(--titleTextColor);
+}
+.highlight {
+  color: var(--mainTextColor);
+}
+.highlight h4 {
+  color: var(--linkColor);
+}
+iframe {
+  border: none;
+  border-radius: 10px;
 }
