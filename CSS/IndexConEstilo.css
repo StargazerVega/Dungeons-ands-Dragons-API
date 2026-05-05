@@ -38,23 +38,24 @@ p {
     z-index: 2;
      background: transparent;
 }
-section {
-    position: relative;
-}
 
-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    
-    width: 100%;
-    height: 100%;
 
-    section::before {
-    background: rgba(0, 0, 0, 0.6);
-}
-    z-index: 1;
+
+.PORTADA::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 800px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 50%,
+    var(--mainBGColor) 100%
+  );
+
+  z-index: 2;
 }
 
 /* body.light {
@@ -107,7 +108,7 @@ body.dark {
 
   width: 100%;
   min-height: 250px;   /* 🔥 altura fija más grande */
-  max-width: 500px;   /* controla tamaño */
+  max-width: 800px;   /* controla tamaño */
 }
 
 .card-img {
@@ -155,22 +156,126 @@ body.dark {
   );
   color: white;
 }
-.videos-section {
+.videos-section-pelicula {
   background-color: var(--secondBGColor);
   border-top: 2px solid var(--titleTextColor);
   padding: 60px 20px;
   border-radius: 10px;
 }
-.videos-section h2 {
+
+.videos-section-pelicula h2 {
   color: var(--titleTextColor);
+  text-align: center;
 }
-.highlight {
-  color: var(--mainTextColor);
-}
-.highlight h4 {
+
+.video-item h4 {
   color: var(--linkColor);
 }
+
+/* efecto hover suave */
+.video-item {
+   color: var(--mainTextColor);
+  background: rgba(0,0,0,0.3);
+  padding: 20px;
+  border-radius: 12px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
 iframe {
   border: none;
   border-radius: 10px;
+}
+.sphere {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: auto;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+
+  position: relative;
+  cursor: pointer;
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* TEXTO ENCIMA */
+.sphere h3 {
+  position: relative;
+  z-index: 2;
+}
+
+/* EFECTO GLOW BASE */
+.sphere::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: 0.7;
+  z-index: 1;
+}
+.sphere-img {
+  position: absolute;
+  bottom: 20px;
+  width: 190px;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* 🔴 WARRIOR */
+.sphere.warrior {
+  background: radial-gradient(circle, #e74c3c, #7f1d1d);
+}
+
+.sphere.warrior::before {
+  background: radial-gradient(circle, rgba(231,76,60,0.6), transparent 70%);
+}
+
+/* 🔵 MAGE */
+.sphere.mage {
+  background: radial-gradient(circle, #3498db, #1a5276);
+}
+
+.sphere.mage::before {
+  background: radial-gradient(circle, rgba(52,152,219,0.6), transparent 70%);
+}
+
+/* 🟣 ROGUE */
+.sphere.rogue {
+  background: radial-gradient(circle, #9b59b6, #4a235a);
+}
+
+.sphere.rogue::before {
+  background: radial-gradient(circle, rgba(155,89,182,0.6), transparent 70%);
+}
+
+/* ✨ HOVER */
+.sphere:hover {
+  transform: scale(1.1) translateY(-10px);
+}
+
+.sphere.warrior:hover {
+  box-shadow: 0 0 40px rgba(231,76,60,0.8);
+}
+
+.sphere.mage:hover {
+  box-shadow: 0 0 40px rgba(52,152,219,0.8);
+}
+
+.sphere.rogue:hover {
+  box-shadow: 0 0 40px rgba(155,89,182,0.8);
 }
