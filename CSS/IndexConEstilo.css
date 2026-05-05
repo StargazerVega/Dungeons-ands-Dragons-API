@@ -17,6 +17,19 @@ h1, h2 {
 p {
     color: var(--mainTextColor);
 }
+.navbar{
+   position: fixed;
+   z-index: 10;
+   width: 100%;
+
+    background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0) 50%,
+    var(--mainBGColor) 100%
+  );
+}
+
+    /* color: var(--secondBGColor); */
 .logo-navbar {
   height: 50px;
   width: auto;
@@ -28,6 +41,7 @@ p {
 .LogoVuelta {
     height: 40px;   /* ajusta entre 30–60px a gusto */
     width: auto;
+    
 }
 .logoMain {
     position: absolute;
@@ -37,6 +51,7 @@ p {
     width: 5000px; /* ajusta tamaño  noo furrula*/
     z-index: 2;
      background: transparent;
+     
 }
 
 
@@ -128,7 +143,8 @@ body.dark {
 .row {
   display: flex;
   justify-content: center;
-  gap: 40px; /* separación bonita */
+  gap: 20px; /* separación bonita */
+  flex-wrap: nowrap
 }
 .card-custom:hover .img-card {
   transform: scale(1.1) translateY(-10px);
@@ -159,15 +175,20 @@ body.dark {
 .videos-section-pelicula {
   background-color: var(--secondBGColor);
   border-top: 2px solid var(--titleTextColor);
-  padding: 60px 20px;
+  padding: 50px 10px;
   border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  width: 50% 662px;
 }
 
 .videos-section-pelicula h2 {
   color: var(--titleTextColor);
   text-align: center;
+  
 }
-
+.video{
+  width: 40%;
+}
 .video-item h4 {
   color: var(--linkColor);
 }
@@ -178,9 +199,7 @@ body.dark {
   background: rgba(0,0,0,0.3);
   padding: 20px;
   border-radius: 12px;
-
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -193,89 +212,102 @@ iframe {
   border: none;
   border-radius: 10px;
 }
-.sphere {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
+
+/* CAJA TIPO VIDEO */
+.dice-video-box {
+  background: var(--secondBGColor);
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 900px;
   margin: auto;
-  color: white;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* LAYOUT */
+.dice-section .row {
+  min-height: 350px;
+}
+
+.dice-left,
+.dice-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dice-right {
+  text-align: left;
+  padding-left: 30px;
+}
+
+/* TEXTO */
+.dice-video-box p,
+.dice-video-box li {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.dice-video-box h5 {
+  color: #d29a38;
+  margin-top: 15px;
+}
+
+/* DADO */
+.dice-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dice-img {
+  width: 120px;
+  transition: transform 0.6s ease;
+}
+
+/* NÚMERO */
+#diceNumber {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
   font-weight: bold;
-  text-align: center;
-
-  position: relative;
-  cursor: pointer;
-
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* TEXTO ENCIMA */
-.sphere h3 {
-  position: relative;
-  z-index: 2;
+/* RESULTADO */
+#diceResult {
+  font-size: 20px;
+  margin-top: 10px;
 }
 
-/* EFECTO GLOW BASE */
-.sphere::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  opacity: 0.7;
-  z-index: 1;
+/* ANIMACIÓN */
+.roll {
+  animation: rollDice 0.8s ease;
 }
-.sphere-img {
-  position: absolute;
+
+@keyframes rollDice {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(360deg) scale(1.3); }
+  100% { transform: rotate(720deg) scale(1); }
+}
+#bgMusic {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#musicBtn {
+  position: fixed;
   bottom: 20px;
-  width: 190px;
-  z-index: 1;
-  opacity: 0.9;
+  right: 20px;
+  background: #d29a38;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
-/* 🔴 WARRIOR */
-.sphere.warrior {
-  background: radial-gradient(circle, #e74c3c, #7f1d1d);
-}
-
-.sphere.warrior::before {
-  background: radial-gradient(circle, rgba(231,76,60,0.6), transparent 70%);
-}
-
-/* 🔵 MAGE */
-.sphere.mage {
-  background: radial-gradient(circle, #3498db, #1a5276);
-}
-
-.sphere.mage::before {
-  background: radial-gradient(circle, rgba(52,152,219,0.6), transparent 70%);
-}
-
-/* 🟣 ROGUE */
-.sphere.rogue {
-  background: radial-gradient(circle, #9b59b6, #4a235a);
-}
-
-.sphere.rogue::before {
-  background: radial-gradient(circle, rgba(155,89,182,0.6), transparent 70%);
-}
-
-/* ✨ HOVER */
-.sphere:hover {
-  transform: scale(1.1) translateY(-10px);
-}
-
-.sphere.warrior:hover {
-  box-shadow: 0 0 40px rgba(231,76,60,0.8);
-}
-
-.sphere.mage:hover {
-  box-shadow: 0 0 40px rgba(52,152,219,0.8);
-}
-
-.sphere.rogue:hover {
-  box-shadow: 0 0 40px rgba(155,89,182,0.8);
-}
