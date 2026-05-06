@@ -55,15 +55,7 @@ rollBtn.addEventListener("click", () => {
   }, 800);
 });
 
-const btn = document.getElementById("musicBtn");
-const iframe = document.getElementById("bgMusic");
 
-btn.addEventListener("click", () => {
-
-  iframe.src = "https://www.youtube.com/embed/sHA_4wfQhE8?autoplay=1&loop=1&playlist=sHA_4wfQhE8";
-
-  btn.textContent = "🎵 Música activada";
-});
 
 //  let carousel = document.querySelector('.carousel-section');
 // if (carousel) {
