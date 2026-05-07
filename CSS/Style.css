@@ -526,8 +526,6 @@ body.light > .title {
    SPELLS PAGE — COLUMN STYLES
    ============================================================= */
 
-.col-school     { }
-.col-level      { }
 .col-name       { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .col-casting    { font-size: 0.83rem; }
 .col-components { font-size: 0.83rem; }
@@ -661,9 +659,6 @@ body.light > .title {
     border-top: 1px solid rgba(210, 154, 56, 0.15);
 }
 
-.spell-item.spell-open .spell-expand-panel {
-    /* display toggled by jQuery */
-}
 
 .spell-detail-body {
     display: flex;
