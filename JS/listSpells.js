@@ -4,7 +4,6 @@
 
 var BASE_URL = 'https://www.dnd5eapi.co';
 
-// Ordinal labels for spell levels
 var LEVEL_LABELS = {
     0: 'Cantrip',
     1: '1st', 2: '2nd', 3: '3rd',
@@ -12,7 +11,6 @@ var LEVEL_LABELS = {
     7: '7th', 8: '8th', 9: '9th'
 };
 
-// School colour accents (matches school images naming)
 var SCHOOL_COLORS = {
     abjuration   : '#7ab1e2',
     conjuration  : '#a3d977',
@@ -24,37 +22,89 @@ var SCHOOL_COLORS = {
     transmutation: '#d29a38'
 };
 
-// Global Isotope instance + active filters
 var $spellsGrid   = null;
 var activeFilters = { level: '*', school: '*' };
-var currentSort   = { key: 'level', dir: 'asc' };
 
 // ── Init ──────────────────────────────────────────────────────
 $(document).ready(function () {
     loadSpells();
 });
 
-// ── Fetch list → fetch all details in parallel ────────────────
+// ── Helpers ───────────────────────────────────────────────────
+
+function sleep(ms) {
+    return new Promise(function (resolve) { setTimeout(resolve, ms); });
+}
+
+// Fetch a URL, retrying automatically on 429 (rate-limited)
+async function fetchWithRetry(url, maxRetries, baseDelay) {
+    maxRetries = maxRetries !== undefined ? maxRetries : 5;
+    baseDelay  = baseDelay  !== undefined ? baseDelay  : 1500;
+
+    for (var attempt = 0; attempt <= maxRetries; attempt++) {
+        var response = await fetch(url);
+
+        if (response.ok) {
+            return response.json();
+        }
+
+        if (response.status === 429) {
+            var wait = baseDelay * (attempt + 1);   // 1.5 s, 3 s, 4.5 s…
+            console.warn('Rate limited on ' + url + ' — waiting ' + wait + 'ms (attempt ' + (attempt + 1) + ')');
+            await sleep(wait);
+            continue;
+        }
+
+        throw new Error('HTTP ' + response.status + ' for ' + url);
+    }
+
+    throw new Error('Max retries exceeded: ' + url);
+}
+
+function setLoadingText(text) {
+    $('#spells-loading p').text(text);
+}
+
+// ── Main loader ───────────────────────────────────────────────
 async function loadSpells() {
     try {
-        var listData = await fetch(BASE_URL + '/api/2014/spells').then(function (r) { return r.json(); });
+        setLoadingText('Fetching spell list…');
 
-        // Batch fetches in groups of 50 to avoid flooding the browser
+        var listData = await fetchWithRetry(BASE_URL + '/api/2014/spells');
+        var urls     = listData.results.map(function (s) { return BASE_URL + s.url; });
+        var total    = urls.length;
         var allSpells = [];
-        var urls = listData.results.map(function (s) { return BASE_URL + s.url; });
-        var batchSize = 50;
 
-        for (var i = 0; i < urls.length; i += batchSize) {
-            var batch = urls.slice(i, i + batchSize);
-            var results = await Promise.all(batch.map(function (u) { return fetch(u).then(function (r) { return r.json(); }); }));
+        // Fetch in small batches with a pause between each to respect rate limits
+        var BATCH_SIZE  = 10;
+        var BATCH_PAUSE = 400;   // ms between batches
+
+        for (var i = 0; i < urls.length; i += BATCH_SIZE) {
+            var batch = urls.slice(i, i + BATCH_SIZE);
+
+            var results = await Promise.all(
+                batch.map(function (u) { return fetchWithRetry(u); })
+            );
+
             allSpells = allSpells.concat(results);
+
+            var loaded  = Math.min(i + BATCH_SIZE, total);
+            var percent = Math.round((loaded / total) * 100);
+            setLoadingText('Loading spells… ' + loaded + ' / ' + total + ' (' + percent + '%)');
+
+            if (i + BATCH_SIZE < urls.length) {
+                await sleep(BATCH_PAUSE);
+            }
         }
 
         renderSpellRows(allSpells);
 
     } catch (err) {
         console.error('Error loading spells:', err);
-        $('#spells-loading').html('<p class="text-danger">Error loading spells. Please refresh.</p>');
+        $('#spells-loading').html(
+            '<p class="text-danger">Error loading spells: ' + err.message + '</p>' +
+            '<button class="btn mt-2" onclick="loadSpells()">Retry</button>'
+        );
     }
 }
 
@@ -72,23 +122,19 @@ function renderSpellRows(spells) {
         var imgName     = schoolIndex.charAt(0).toUpperCase() + schoolIndex.slice(1) + 'IMG.png';
         var schoolColor = SCHOOL_COLORS[schoolIndex] || '#c2c2c2';
 
-        // Isotope needs a flat single element per item — the expand panel lives inside it
         var rowHTML =
             '<div class="spell-item spell-lvl-' + level + ' school-' + schoolIndex + '"' +
-                ' data-index="'  + spell.index                  + '"' +
-                ' data-level="'  + level                        + '"' +
-                ' data-name="'   + spell.name.toLowerCase()     + '"' +
-                ' data-school="' + schoolIndex                  + '">' +
+                ' data-index="'  + spell.index              + '"' +
+                ' data-level="'  + level                    + '"' +
+                ' data-name="'   + spell.name.toLowerCase() + '"' +
+                ' data-school="' + schoolIndex              + '">' +
 
-                // ── Collapsed row ──────────────────────────────
                 '<div class="spell-row">' +
                     '<div class="col-school">' +
-                        '<div class="school-img-wrap" style="border-color:' + schoolColor + '22; background:' + schoolColor + '11">' +
-                            '<img src="/ASSETS/IMG/' + imgName + '" alt="' + schoolName + '"' +
-                                ' title="' + schoolName + '"' +
+                        '<div class="school-img-wrap" style="border-color:' + schoolColor + '33; background:' + schoolColor + '11">' +
+                            '<img src="/ASSETS/IMG/' + imgName + '" alt="' + schoolName + '" title="' + schoolName + '"' +
                                 ' onerror="this.style.opacity=\'0\'">' +
-                            '<span class="school-initial" style="color:' + schoolColor + '">' +
-                                schoolName.charAt(0) + '</span>' +
+                            '<span class="school-initial" style="color:' + schoolColor + '">' + schoolName.charAt(0) + '</span>' +
                         '</div>' +
                     '</div>' +
                     '<div class="col-level">' +
@@ -103,13 +149,8 @@ function renderSpellRows(spells) {
                     '<div class="col-chevron"><span class="chevron-icon">▾</span></div>' +
                 '</div>' +
 
-                // ── Expanded panel (hidden by default) ────────
                 '<div class="spell-expand-panel">' +
-                    '<div class="spell-expand-inner" data-index="' + spell.index + '" data-loaded="false">' +
-                        '<div class="spell-expand-loading text-center py-3">' +
-                            '<div class="spinner-border spinner-border-sm" role="status"></div>' +
-                        '</div>' +
-                    '</div>' +
+                    '<div class="spell-expand-inner" data-index="' + spell.index + '" data-loaded="false"></div>' +
                 '</div>' +
 
             '</div>';
@@ -117,47 +158,35 @@ function renderSpellRows(spells) {
         $container.append(rowHTML);
     });
 
-    // ── Isotope init ──────────────────────────────────────────
+    // ── Isotope ───────────────────────────────────────────────
+    // fitRows keeps items as positioned elements but respects
+    // width:100% correctly, unlike vertical mode.
     $spellsGrid = $container.isotope({
-        itemSelector : '.spell-item',
-        layoutMode   : 'vertical',
-        getSortData  : {
+        itemSelector  : '.spell-item',
+        layoutMode    : 'fitRows',
+        getSortData   : {
             level : '[data-level] parseInt',
             name  : '[data-name]'
         },
-        sortBy    : 'level',
-        sortAscending: true
+        sortBy        : 'level',
+        sortAscending : true
     });
 
     wireControls();
 }
 
-// ── Wire sort & filter buttons ────────────────────────────────
+// ── Wire controls ─────────────────────────────────────────────
 function wireControls() {
-
-    // SORT buttons
     $('[data-sort]').on('click', function () {
-        var key = $(this).data('sort');
-        var dir = $(this).data('sort-dir') === 'asc';
-        currentSort = { key: key, dir: dir };
-        $spellsGrid.isotope({ sortBy: key, sortAscending: dir });
-
+        $spellsGrid.isotope({ sortBy: $(this).data('sort'), sortAscending: true });
         $('[data-sort]').removeClass('active');
         $(this).addClass('active');
     });
 
-    // FILTER buttons (level + school are combined)
     $('[data-filter-type]').on('click', function () {
         var type = $(this).data('filter-type');
-        var val  = $(this).data('filter');
-
-        activeFilters[type] = val;
-
-        // Combine both active filters
-        var combined = combineFilters();
-        $spellsGrid.isotope({ filter: combined });
-
-        // Mark active within the same group only
+        activeFilters[type] = $(this).data('filter');
+        $spellsGrid.isotope({ filter: combineFilters() });
         $('[data-filter-type="' + type + '"]').removeClass('active');
         $(this).addClass('active');
     });
@@ -166,10 +195,8 @@ function wireControls() {
 function combineFilters() {
     var lf = activeFilters.level;
     var sf = activeFilters.school;
-
     if (lf === '*' && sf === '*') return '*';
     if (lf === '*') return sf;
     if (sf === '*') return lf;
-    // Isotope compound filter: element must match BOTH classes
-    return lf + sf;    // e.g. ".spell-lvl-3.school-evocation"
+    return lf + sf;
 }

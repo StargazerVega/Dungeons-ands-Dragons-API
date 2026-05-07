@@ -1,3 +1,7 @@
+/* =============================================================
+   Style.css  —  D&D Classes Web
+   ============================================================= */
+
 :root {
     /* DARK COLORS */
     --DmainBGColor    : #2d3140;
@@ -14,9 +18,10 @@
     --LlinkColor      : #44cf85;
 }
 
+/* =============================================================
+   DARK MODE — BASE
+   ============================================================= */
 
-
-/*Base del modo oscuro*/
 body.dark {
     background-color: var(--DsecondBGColor);
 }
@@ -34,9 +39,10 @@ body.dark > .title {
     color: var(--DtitleTextColor);
 }
 
+/* =============================================================
+   GLOBAL BUTTON
+   ============================================================= */
 
-
-/*Botones*/
 .btn {
     background-color: var(--DmainBGColor);
     color: var(--DmainTextColor);
@@ -55,9 +61,10 @@ body.dark > .title {
     background-color: var(--DtitleTextColor);
 }
 
+/* =============================================================
+   NAVBAR
+   ============================================================= */
 
-
-/*Navbar*/
 .navbar {
     background-color: var(--DsecondBGColor);
     border-bottom: 1px solid rgba(210, 154, 56, 0.25);
@@ -73,14 +80,14 @@ body.dark > .title {
     color: var(--DtitleTextColor);
 }
 
+/* =============================================================
+   FILTER BUTTONS
+   ============================================================= */
 
-
-/*Botones de filtro*/
 .btns-cont {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .filter {
@@ -107,9 +114,10 @@ body.dark > .title {
     font-weight: 600;
 }
 
+/* =============================================================
+   CLASS CARDS
+   ============================================================= */
 
-
-/*Tarjetas de clase*/
 .class-card {
     border: 1px solid rgba(210, 154, 56, 0.25);
     border-radius: 8px;
@@ -168,16 +176,18 @@ body.dark > .title {
     letter-spacing: 0.03em;
 }
 
+/* =============================================================
+   SPINNER
+   ============================================================= */
 
-
-/*Spinner*/
 .spinner-border {
     color: var(--DtitleTextColor);
 }
 
+/* =============================================================
+   LEVEL DETAIL SECTION
+   ============================================================= */
 
-
-/*Sección de Features por nivel*/
 .levelUpCont {
     background-color: var(--DmainBGColor);
     min-height: 60px;
@@ -189,7 +199,8 @@ body.dark > .title {
     margin: 0 auto;
 }
 
-/*Header*/
+/* ── Header ── */
+
 .class-detail-header {
     border-bottom: 2px solid rgba(210, 154, 56, 0.4);
     padding-bottom: 1.1rem;
@@ -206,7 +217,8 @@ body.dark > .title {
     flex-wrap: wrap;
 }
 
-/*Category Badges*/
+/* ── Category badges ── */
+
 .category-badge {
     display: inline-block;
     font-size: 0.7rem;
@@ -236,7 +248,8 @@ body.dark > .title {
     border: 1px solid rgba(130, 60, 200, 0.4);
 }
 
-/*Meta-bar*/
+/* ── Meta bar ── */
+
 .class-meta-bar {
     display: flex;
     gap: 2.5rem;
@@ -264,7 +277,8 @@ body.dark > .title {
     color: var(--DmainTextColor);
 }
 
-/*titulos de sección*/
+/* ── Section headings ── */
+
 .section-subtitle {
     color: var(--DtitleTextColor);
     font-size: 1.15rem;
@@ -275,24 +289,19 @@ body.dark > .title {
     letter-spacing: 0.03em;
 }
 
-
-
-/*Tabla de Progresión*/
-.table.class-table > :not(caption) > * > * {
-    background-color: var(--DsecondBGColor);
-    color: var(--DmainTextColor);
-}
+/* =============================================================
+   PROGRESSION TABLE
+   ============================================================= */
 
 .class-table {
     color: var(--DmainTextColor);
     font-size: 0.84rem;
     border-color: rgba(255, 255, 255, 0.07);
-    background-color: var(--DsecondBGColor);
     margin-bottom: 0;
 }
 
 .class-table thead {
-    background-color: rgba(210, 56, 56, 0.12);
+    background-color: rgba(210, 154, 56, 0.12);
 }
 
 .class-table thead th {
@@ -325,7 +334,7 @@ body.dark > .title {
     min-width: 52px;
 }
 
-.levelNum-level {
+.roman-level {
     font-weight: 700;
     color: var(--DtitleTextColor);
     font-size: 0.9rem;
@@ -359,9 +368,10 @@ body.dark > .title {
     color: rgba(194, 194, 194, 0.3);
 }
 
+/* =============================================================
+   FEATURES ACCORDION
+   ============================================================= */
 
-
-/*Acordeón de Features*/
 .features-accordion {
     border-radius: 6px;
     overflow: hidden;
@@ -390,7 +400,7 @@ body.dark > .title {
     color: var(--DtitleTextColor);
 }
 
-/*Arrow icon colour*/
+/* Arrow icon colour */
 .features-accordion .accordion-button::after {
     filter: brightness(0) saturate(100%) invert(65%) sepia(40%) saturate(600%) hue-rotate(10deg);
     flex-shrink: 0;
@@ -436,7 +446,10 @@ body.dark > .title {
     margin-top: 0.75rem;
 }
 
-/*Light Mode*/
+/* =============================================================
+   LIGHT MODE (unchanged from original, kept for reference)
+   ============================================================= */
+
 body.light {
     background-color: var(--LsecondBGColor);
 }
@@ -448,4 +461,363 @@ body.light > * {
 
 body.light > .title {
     color: var(--LtitleTextColor);
+}
+
+
+/* =============================================================
+   SPELLS PAGE — CONTROLS BAR
+   ============================================================= */
+
+.spells-controls-bar {
+    background-color: var(--DsecondBGColor);
+    border-bottom: 1px solid rgba(210, 154, 56, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem 2.5rem;
+    align-items: center;
+}
+
+.spells-control-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.control-label {
+    font-size: 0.68rem;
+    color: var(--DtitleTextColor);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-right: 0.25rem;
+    white-space: nowrap;
+    opacity: 0.85;
+}
+
+/* =============================================================
+   SPELLS PAGE — TABLE HEADER + ROW SHARED GRID LAYOUT
+   CSS Grid ensures columns always align, regardless of how
+   Isotope positions each .spell-item absolutely.
+   ============================================================= */
+
+.spells-table-header,
+.spell-row {
+    display: grid;
+    grid-template-columns: 52px 80px 1fr 160px 130px 28px;
+    align-items: center;
+    column-gap: 0.75rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.spells-table-header {
+    padding: 0.45rem 0.75rem;
+    border-bottom: 2px solid rgba(210, 154, 56, 0.35);
+    color: var(--DtitleTextColor);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    background-color: rgba(210, 154, 56, 0.06);
+    border-radius: 4px 4px 0 0;
+}
+
+/* =============================================================
+   SPELLS PAGE — COLUMN STYLES
+   ============================================================= */
+
+.col-school     { }
+.col-level      { }
+.col-name       { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.col-casting    { font-size: 0.83rem; }
+.col-components { font-size: 0.83rem; }
+.col-chevron    { text-align: right; }
+
+/* =============================================================
+   SPELLS PAGE — SPELL ROWS
+   ============================================================= */
+
+#spellsCont {
+    width: 100%;
+}
+
+.spell-item {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.15s;
+}
+
+.spell-item:hover {
+    background-color: rgba(210, 154, 56, 0.04);
+}
+
+.spell-item.spell-open {
+    background-color: rgba(210, 154, 56, 0.06);
+    border-bottom-color: rgba(210, 154, 56, 0.25);
+}
+
+.spell-row {
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    font-size: 0.875rem;
+    color: var(--DmainTextColor);
+    user-select: none;
+}
+
+/* ── School image square ── */
+
+.school-img-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.school-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+}
+
+.school-initial {
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ── Level badge ── */
+
+.level-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.07);
+    color: var(--DmainTextColor);
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+}
+
+.level-badge.lvl-0  { background-color: rgba(135, 206, 235, 0.15); color: #87ceeb; }
+.level-badge.lvl-1  { background-color: rgba(163, 217, 119, 0.15); color: #a3d977; }
+.level-badge.lvl-2  { background-color: rgba(163, 217, 119, 0.2);  color: #a3d977; }
+.level-badge.lvl-3  { background-color: rgba(122, 177, 226, 0.15); color: #7ab1e2; }
+.level-badge.lvl-4  { background-color: rgba(122, 177, 226, 0.2);  color: #7ab1e2; }
+.level-badge.lvl-5  { background-color: rgba(210, 154, 56, 0.15);  color: #d29a38; }
+.level-badge.lvl-6  { background-color: rgba(210, 154, 56, 0.2);   color: #d29a38; }
+.level-badge.lvl-7  { background-color: rgba(240, 128, 128, 0.15); color: #f08080; }
+.level-badge.lvl-8  { background-color: rgba(240, 128, 128, 0.2);  color: #f08080; }
+.level-badge.lvl-9  { background-color: rgba(194, 163, 224, 0.2);  color: #c2a3e0; }
+
+/* ── Components ── */
+
+.components-text {
+    font-family: monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+}
+
+.material-indicator {
+    color: var(--DtitleTextColor);
+    font-weight: 800;
+    margin-left: 2px;
+    cursor: help;
+    font-size: 0.9rem;
+}
+
+/* ── Chevron ── */
+
+.chevron-icon {
+    font-size: 1rem;
+    color: rgba(194, 194, 194, 0.4);
+    transition: transform 0.25s;
+    display: inline-block;
+}
+
+.spell-item.spell-open .chevron-icon {
+    transform: rotate(180deg);
+    color: var(--DtitleTextColor);
+}
+
+/* =============================================================
+   SPELLS PAGE — EXPAND PANEL
+   Uses display:none/block toggled by jQuery slideDown/slideUp.
+   No max-height tricks — Isotope remeasures items on open.
+   ============================================================= */
+
+.spell-expand-panel {
+    display: none;
+    border-top: 1px solid rgba(210, 154, 56, 0.15);
+}
+
+.spell-item.spell-open .spell-expand-panel {
+    /* display toggled by jQuery */
+}
+
+.spell-detail-body {
+    display: flex;
+    gap: 2.5rem;
+    padding: 1.5rem 0.75rem 1.5rem 2.5rem;
+    flex-wrap: wrap;
+}
+
+/* ── Left: description ── */
+
+.spell-detail-left {
+    flex: 1 1 380px;
+    min-width: 260px;
+}
+
+.spell-detail-title-bar {
+    margin-bottom: 1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(210, 154, 56, 0.2);
+}
+
+.spell-detail-name {
+    color: var(--DtitleTextColor);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.spell-detail-subtitle {
+    font-size: 0.83rem;
+    color: rgba(194, 194, 194, 0.75);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.spell-description p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--DmainTextColor);
+    margin-bottom: 0.75rem;
+}
+
+.spell-detail-block {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.detail-block-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--DtitleTextColor);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+/* ── Right: metadata ── */
+
+.spell-detail-right {
+    flex: 0 0 260px;
+    min-width: 220px;
+}
+
+.detail-meta-grid {
+    background-color: var(--DsecondBGColor);
+    border-radius: 6px;
+    padding: 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+    border: 1px solid rgba(210, 154, 56, 0.12);
+}
+
+.detail-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.detail-meta-label {
+    font-size: 0.67rem;
+    color: var(--DtitleTextColor);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    opacity: 0.85;
+}
+
+.detail-meta-value {
+    font-size: 0.88rem;
+    color: var(--DmainTextColor);
+    font-weight: 500;
+}
+
+.material-note {
+    font-size: 0.78rem;
+    color: rgba(194, 194, 194, 0.55);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    padding: 0 0.2rem;
+}
+
+/* ── Classes available ── */
+
+.detail-classes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.class-tags-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.class-tag {
+    font-size: 0.72rem;
+    padding: 0.18rem 0.6rem;
+    border-radius: 3px;
+    background-color: rgba(122, 177, 226, 0.12);
+    color: var(--DlinkColor);
+    border: 1px solid rgba(122, 177, 226, 0.25);
+    white-space: nowrap;
+}
+
+/* ── Spell tags (Concentration, Ritual, etc.) ── */
+
+.spell-tag {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
+}
+
+.tag-concentration {
+    background-color: rgba(122, 177, 226, 0.15);
+    color: #7ab1e2;
+    border: 1px solid rgba(122, 177, 226, 0.3);
+}
+
+.tag-ritual {
+    background-color: rgba(163, 217, 119, 0.15);
+    color: #a3d977;
+    border: 1px solid rgba(163, 217, 119, 0.3);
+}
+
+.tag-attack {
+    background-color: rgba(240, 128, 128, 0.15);
+    color: #f08080;
+    border: 1px solid rgba(240, 128, 128, 0.3);
 }
