@@ -29,30 +29,31 @@ p {
   );
 }
 
+
     /* color: var(--secondBGColor); */
 .logo-navbar {
   height: 50px;
   width: auto;
 }
+
 .logoMain {
-  max-width: 300px;
-  filter: drop-shadow(0 0 10px black);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 80%;
+    max-width: 500px;
+
+    z-index: 2;
+    background: transparent;
 }
 .LogoVuelta {
     height: 40px;   /* ajusta entre 30–60px a gusto */
     width: auto;
     
 }
-.logoMain {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 5000px; /* ajusta tamaño  noo furrula*/
-    z-index: 2;
-     background: transparent;
-     
-}
+
 
 
 
@@ -140,13 +141,12 @@ body.dark {
   object-fit: contain;
   transition: transform 0.4s ease;
 }
-.row {
+.custom-row {
   display: flex;
   justify-content: center;
-  gap: 20px; /* separación bonita */
-  flex-wrap: nowrap
-}
-.card-custom:hover .img-card {
+  gap: 20px;
+  flex-wrap: wrap;
+}ard-custom:hover .img-card {
   transform: scale(1.1) translateY(-10px);
 }
 
@@ -178,7 +178,8 @@ body.dark {
   padding: 50px 10px;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-  width: 50% 662px;
+  max-width: 662px;
+  width: 50%;
 }
 
 .videos-section-pelicula h2 {
@@ -217,15 +218,44 @@ iframe {
 
 /* CAJA TIPO VIDEO */
 .dice-video-box {
-  background: var(--secondBGColor);
-  border-radius: 15px;
-  padding: 30px;
-  max-width: 900px;
+  background: linear-gradient(
+    145deg,
+    #1f222e,
+    #181b25
+  );
+
+  border: 1px solid rgba(255,255,255,0.05);
+
+  border-radius: 24px;
+
+  padding: 50px;
+
+  max-width: 1100px;
+
   margin: auto;
 
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.6),
+    inset 0 0 20px rgba(255,255,255,0.02);
+}
+.dice-model {
+  width: 100%;
+  height: 320px;
+
+  border-radius: 20px;
+
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.03),
+    transparent
+  );
+
+  transition: transform 0.4s ease;
 }
 
+.dice-model:hover {
+  transform: scale(1.03);
+}
 /* LAYOUT */
 .dice-section .row {
   min-height: 350px;
