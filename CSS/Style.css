@@ -292,8 +292,10 @@ body.dark > .title {
 /* =============================================================
    PROGRESSION TABLE
    ============================================================= */
-
-.class-table {
+/*Tabla de Progresión*/
+.class-table > :not(caption) > * > * {
+    background-color: var(--DsecondBGColor);
+    color: var(--DmainTextColor);
     color: var(--DmainTextColor);
     font-size: 0.84rem;
     border-color: rgba(255, 255, 255, 0.07);
