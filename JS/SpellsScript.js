@@ -1,8 +1,3 @@
-// =============================================================
-//  SpellsScript.js  —  Expand/collapse spell rows + detail view
-// =============================================================
-
-// ── Toggle row on click ───────────────────────────────────────
 $(document).on('click', '.spell-row', function () {
     var $item  = $(this).closest('.spell-item');
     var $panel = $item.find('.spell-expand-panel');

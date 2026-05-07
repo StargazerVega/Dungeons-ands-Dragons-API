@@ -1,7 +1,3 @@
-// =============================================================
-//  listSpells.js  —  Fetch & render all D&D spells + Isotope
-// =============================================================
-
 var BASE_URL = 'https://www.dnd5eapi.co';
 
 var LEVEL_LABELS = {

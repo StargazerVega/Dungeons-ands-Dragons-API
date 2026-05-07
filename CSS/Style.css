@@ -1,7 +1,3 @@
-/* =============================================================
-   Style.css  —  D&D Classes Web
-   ============================================================= */
-
 :root {
     /* DARK COLORS */
     --DmainBGColor    : #2d3140;
@@ -18,10 +14,9 @@
     --LlinkColor      : #44cf85;
 }
 
-/* =============================================================
-   DARK MODE — BASE
-   ============================================================= */
 
+
+/*Dark Mode*/
 body.dark {
     background-color: var(--DsecondBGColor);
 }
@@ -39,10 +34,9 @@ body.dark > .title {
     color: var(--DtitleTextColor);
 }
 
-/* =============================================================
-   GLOBAL BUTTON
-   ============================================================= */
 
+
+/*Botones Globales*/
 .btn {
     background-color: var(--DmainBGColor);
     color: var(--DmainTextColor);
@@ -61,10 +55,9 @@ body.dark > .title {
     background-color: var(--DtitleTextColor);
 }
 
-/* =============================================================
-   NAVBAR
-   ============================================================= */
 
+
+/*Navbar*/
 .navbar {
     background-color: var(--DsecondBGColor);
     border-bottom: 1px solid rgba(210, 154, 56, 0.25);
@@ -80,10 +73,9 @@ body.dark > .title {
     color: var(--DtitleTextColor);
 }
 
-/* =============================================================
-   FILTER BUTTONS
-   ============================================================= */
 
+
+/*Botones de Filtros*/
 .btns-cont {
     display: flex;
     gap: 0.5rem;
@@ -114,10 +106,9 @@ body.dark > .title {
     font-weight: 600;
 }
 
-/* =============================================================
-   CLASS CARDS
-   ============================================================= */
 
+
+/*Tarjetas de Clases*/
 .class-card {
     border: 1px solid rgba(210, 154, 56, 0.25);
     border-radius: 8px;
@@ -176,18 +167,16 @@ body.dark > .title {
     letter-spacing: 0.03em;
 }
 
-/* =============================================================
-   SPINNER
-   ============================================================= */
 
+
+/*Spinner*/
 .spinner-border {
     color: var(--DtitleTextColor);
 }
 
-/* =============================================================
-   LEVEL DETAIL SECTION
-   ============================================================= */
 
+
+/*Detalles por nivel*/
 .levelUpCont {
     background-color: var(--DmainBGColor);
     min-height: 60px;
@@ -199,8 +188,7 @@ body.dark > .title {
     margin: 0 auto;
 }
 
-/* ── Header ── */
-
+/*Header*/
 .class-detail-header {
     border-bottom: 2px solid rgba(210, 154, 56, 0.4);
     padding-bottom: 1.1rem;
@@ -217,8 +205,7 @@ body.dark > .title {
     flex-wrap: wrap;
 }
 
-/* ── Category badges ── */
-
+/*Category badges*/
 .category-badge {
     display: inline-block;
     font-size: 0.7rem;
@@ -248,8 +235,7 @@ body.dark > .title {
     border: 1px solid rgba(130, 60, 200, 0.4);
 }
 
-/* ── Meta bar ── */
-
+/*Meta bar*/
 .class-meta-bar {
     display: flex;
     gap: 2.5rem;
@@ -277,8 +263,7 @@ body.dark > .title {
     color: var(--DmainTextColor);
 }
 
-/* ── Section headings ── */
-
+/*Section headings*/
 .section-subtitle {
     color: var(--DtitleTextColor);
     font-size: 1.15rem;
@@ -289,9 +274,10 @@ body.dark > .title {
     letter-spacing: 0.03em;
 }
 
-/* =============================================================
-   PROGRESSION TABLE
-   ============================================================= */
+
+
+
+
 /*Tabla de Progresión*/
 .class-table > :not(caption) > * > * {
     background-color: var(--DsecondBGColor);
@@ -370,10 +356,10 @@ body.dark > .title {
     color: rgba(194, 194, 194, 0.3);
 }
 
-/* =============================================================
-   FEATURES ACCORDION
-   ============================================================= */
 
+
+
+/*Acordeón de features*/
 .features-accordion {
     border-radius: 6px;
     overflow: hidden;
@@ -402,7 +388,9 @@ body.dark > .title {
     color: var(--DtitleTextColor);
 }
 
-/* Arrow icon colour */
+
+
+/* Arrow icon color */
 .features-accordion .accordion-button::after {
     filter: brightness(0) saturate(100%) invert(65%) sepia(40%) saturate(600%) hue-rotate(10deg);
     flex-shrink: 0;
@@ -448,10 +436,10 @@ body.dark > .title {
     margin-top: 0.75rem;
 }
 
-/* =============================================================
-   LIGHT MODE (unchanged from original, kept for reference)
-   ============================================================= */
 
+
+
+/*Light mode*/
 body.light {
     background-color: var(--LsecondBGColor);
 }
@@ -466,10 +454,13 @@ body.light > .title {
 }
 
 
-/* =============================================================
-   SPELLS PAGE — CONTROLS BAR
-   ============================================================= */
 
+
+
+
+
+
+/*Hoja de hechizos*/
 .spells-controls-bar {
     background-color: var(--DsecondBGColor);
     border-bottom: 1px solid rgba(210, 154, 56, 0.2);
@@ -496,12 +487,9 @@ body.light > .title {
     opacity: 0.85;
 }
 
-/* =============================================================
-   SPELLS PAGE — TABLE HEADER + ROW SHARED GRID LAYOUT
-   CSS Grid ensures columns always align, regardless of how
-   Isotope positions each .spell-item absolutely.
-   ============================================================= */
 
+
+/*Grid para la tabla de hechizos*/
 .spells-table-header,
 .spell-row {
     display: grid;
@@ -524,19 +512,13 @@ body.light > .title {
     border-radius: 4px 4px 0 0;
 }
 
-/* =============================================================
-   SPELLS PAGE — COLUMN STYLES
-   ============================================================= */
-
+/*Estilo de columnas*/
 .col-name       { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .col-casting    { font-size: 0.83rem; }
 .col-components { font-size: 0.83rem; }
 .col-chevron    { text-align: right; }
 
-/* =============================================================
-   SPELLS PAGE — SPELL ROWS
-   ============================================================= */
-
+/*Filas de hechizos*/
 #spellsCont {
     width: 100%;
 }
@@ -564,8 +546,7 @@ body.light > .title {
     user-select: none;
 }
 
-/* ── School image square ── */
-
+/*School image square*/
 .school-img-wrap {
     width: 36px;
     height: 36px;
@@ -595,7 +576,7 @@ body.light > .title {
     pointer-events: none;
 }
 
-/* ── Level badge ── */
+/*Level badge*/
 
 .level-badge {
     display: inline-block;
@@ -620,7 +601,7 @@ body.light > .title {
 .level-badge.lvl-8  { background-color: rgba(240, 128, 128, 0.2);  color: #f08080; }
 .level-badge.lvl-9  { background-color: rgba(194, 163, 224, 0.2);  color: #c2a3e0; }
 
-/* ── Components ── */
+/*Components*/
 
 .components-text {
     font-family: monospace;
@@ -636,7 +617,7 @@ body.light > .title {
     font-size: 0.9rem;
 }
 
-/* ── Chevron ── */
+/*Chevron*/
 
 .chevron-icon {
     font-size: 1rem;
@@ -650,12 +631,11 @@ body.light > .title {
     color: var(--DtitleTextColor);
 }
 
-/* =============================================================
-   SPELLS PAGE — EXPAND PANEL
-   Uses display:none/block toggled by jQuery slideDown/slideUp.
-   No max-height tricks — Isotope remeasures items on open.
-   ============================================================= */
 
+
+
+
+/*Panel Extensible de hechizos*/
 .spell-expand-panel {
     display: none;
     border-top: 1px solid rgba(210, 154, 56, 0.15);
@@ -669,8 +649,7 @@ body.light > .title {
     flex-wrap: wrap;
 }
 
-/* ── Left: description ── */
-
+/*Left: description*/
 .spell-detail-left {
     flex: 1 1 380px;
     min-width: 260px;
@@ -720,8 +699,7 @@ body.light > .title {
     font-weight: 700;
 }
 
-/* ── Right: metadata ── */
-
+/*Right: metadata*/
 .spell-detail-right {
     flex: 0 0 260px;
     min-width: 220px;
@@ -766,8 +744,7 @@ body.light > .title {
     padding: 0 0.2rem;
 }
 
-/* ── Classes available ── */
-
+/*Classes available*/
 .detail-classes {
     display: flex;
     flex-direction: column;
@@ -790,8 +767,7 @@ body.light > .title {
     white-space: nowrap;
 }
 
-/* ── Spell tags (Concentration, Ritual, etc.) ── */
-
+/*Spell tags*/
 .spell-tag {
     font-size: 0.65rem;
     padding: 0.15rem 0.55rem;
