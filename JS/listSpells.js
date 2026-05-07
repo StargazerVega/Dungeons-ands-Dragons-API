@@ -130,7 +130,6 @@ function renderSpellRows(spells) {
                         '<div class="school-img-wrap" style="border-color:' + schoolColor + '33; background:' + schoolColor + '11">' +
                             '<img src="/ASSETS/IMG/' + imgName + '" alt="' + schoolName + '" title="' + schoolName + '"' +
                                 ' onerror="this.style.opacity=\'0\'">' +
-                            '<span class="school-initial" style="color:' + schoolColor + '">' + schoolName.charAt(0) + '</span>' +
                         '</div>' +
                     '</div>' +
                     '<div class="col-level">' +
