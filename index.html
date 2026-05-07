@@ -2,25 +2,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="ASSETS/IMG/LogoPestaña.webp" />
-
+    <link rel="shortcut icon" href="ASSETS/IMG/Index/LogoPestaña.webp" />
+    <!-- flickity -->
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    
+    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <!-- AOS -->
+     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- CSS LINK -->
-    <link rel="stylesheet" href="CSS/Style.css">
+    <link rel="stylesheet" href="CSS/IndexConEstilo.css">
     
     <title>Dungeons-And-Dragons</title>
-
 </head>
 <body>
-    <h1 class="title">Dungeons And Dragons API</h1>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a href="index.html">
+                    <img src="ASSETS/IMG/Index/LogoPestaña.webp" alt="LogoVuelta" class="LogoVuelta">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mynavbar">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">Clases</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">Hechizos</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="text" placeholder="Search">
+                        <button class="btn btn-primary" type="button">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- PORTADA -->
+
+        <section class="PORTADA position-relative vh-100 overflow-hidden">
+            
+            <video id="bgVideo" autoplay muted playsinline class="w-100 h-100 object-fit-cover position-absolute top-0 start-0">
+            </video>
+    
+            <img src="ASSETS/IMG/Index/Dungeons-and-Dragons-logo.png" class="logoMain">
+    
+        </section>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero d-flex align-items-center">
+      <div class="container text-center">
+
+        <h1 class="mb-3">Level Up Your Game</h1>
+        <p class="mb-5">Unlock digital tools, exclusive perks, and more.</p>
+
+        <div class="row justify-content-center g-4">
+
+          <!-- CARD 1 -->
+          <div class="col-md-5">
+            <div class="card-custom card-dark position-relative">
+
+              <div data-aos="fade-right" class="card-img">
+                <img src="ASSETS/IMG/Index/PersonajesIndex.webp" class="img-fluid img-card">
+              </div>
+
+              <h2>Clases Tier</h2>
+              <p>Unlimited character slots, monthly perks, and more.</p>
+              <button class="btn btn-light">JOIN CLASES TIER</button>
+
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+            <div data-aos="fade-right" class="col-md-5">
+              <div class="card-custom card-gold position-relative">
+
+                <div class="card-img">
+                  <img src="ASSETS/IMG/Index/HechizosIndex.webp" class="img-fluid img-card">
+                </div>
+
+                <h2>Hechizos Tier</h2>
+                <p>Share content, use homebrew and more.</p>
+                <button class="btn btn-light">JOIN HECHIZOS TIER</button>
+
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </section>
+    
+<!-- SELECCION PERSONAJE -->
+ 
+    <!-- VIDEOS FILM -->
+
+    <section class="videos-section-pelicula container my-5">
+
+      <h2 class="mb-5">Videos</h2>
+
+      <!-- VIDEO 1 -->
+        <div class="row g-4">
+
+            <div class=" video col-md-6 video-item">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/IiMinixSXII"></iframe>
+                </div>
+                <h4>Dungeons & Dragons Fan Expo, London</h4>
+                <p>Join the UK’s biggest convention...</p>
+            </div>
+
+            <div class="video col-md-6 video-item">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/8K2Cc0n_2IE"></iframe>
+                </div>
+                        <h4>D&D en Discord</h4>
+                        <p>Meet fellow adventurers...</p>
+            </div>
+
+        </div>
+                
+
+    </section>
+    <section class="links-section container my-5">
+  <h2 class="text-center mb-4">Explora el Mundo de D&D</h2>
+  <p class="text-center mb-5">Accede a recursos oficiales y expande tu aventura.</p>
+
+  <div class="row g-4">
+
+    <!-- CARD GRANDE -->
+    <div class="col-md-8">
+      <a href="https://www.dndbeyond.com/characters" target="_blank" class="card-link">
+        <div class="card-img-big">
+          <div class="overlay">
+            <h3>My Characters</h3>
+            <p>Crea y gestiona tus personajes fácilmente.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- COLUMNAS DERECHA -->
+    <div class="col-md-4 d-flex flex-column gap-4">
+
+      <a href="https://www.dndbeyond.com/campaigns" target="_blank" class="card-link">
+        <div class="card-img-small card-1">
+          <div class="overlay">
+            <h4>My Campaigns</h4>
+            <p>Gestiona tus partidas y jugadores.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.dndbeyond.com/maps" target="_blank" class="card-link">
+        <div class="card-img-small card-2">
+          <div class="overlay">
+            <h4>Maps VTT</h4>
+            <p>Explora mapas y aventuras digitales.</p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
 
 
+<!-- DADO -->
 
 
+<section class="dice-section">
+  <div class="container">
+
+    <div class="row justify-content-center">
+
+      <!-- CAJA CENTRADA TIPO VIDEO -->
+      <div class="col-md-10">
+        <div class="dice-video-box">
+
+          <div class="row align-items-center">
+
+            <!-- IZQUIERDA -->
+            <div class="col-md-5 text-center">
+              <div class="dice-container">
+                <img id="diceImg" src="ASSETS/IMG/Index/D20.png" class="dice-img">
+                <span id="diceNumber">?</span>
+              </div>
+
+              <h4 id="diceResult">Resultado: ?</h4>
+
+              <button id="rollBtn" class="btn btn-light mt-2">
+                Lanzar
+              </button>
+            </div>
+
+            <!-- DERECHA -->
+            <div class="col-md-7">
+              <p>
+                Este es el dado más importante del sistema D20. Determina si tus acciones tienen éxito o fallan.
+              </p>
+
+              <h5>¿Cómo funciona?</h5>
+              <ol>
+                <li>Tira un dado de 20 caras.</li>
+                <li>Añade modificadores.</li>
+                <li>Compara con la dificultad.</li>
+              </ol>
+
+              <h5>Resultados especiales</h5>
+              <ul>
+                <li><strong>20:</strong> Éxito crítico</li>
+                <li><strong>1:</strong> Fallo crítico</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Modelado  -->
 
 
+<section class="characters-section container my-5">
+  <div class="row align-items-center">
+
+    <!-- TEXTO -->
+    <div class="col-md-6 text-center text-md-start">
+      <h2>Personajes & Clases</h2>
+      <p>
+        Explora las diferentes clases de Dungeons & Dragons, desde valientes guerreros
+        hasta poderosos magos. Crea tu personaje y define tu destino.
+      </p>
+      <button class="btn btn-custom">Explorar Clases</button>
+    </div>
+
+    <!-- 3D -->
+    <div class="col-md-6 text-center">
+      <model-viewer 
+        src="ASSETS/3D/personaje.glb" 
+        auto-rotate 
+        camera-controls 
+        style="width: 100%; height: 400px;">
+      </model-viewer>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Hechizos -->
+
+<section class="spells-section container my-5">
+  <div class="row align-items-center">
+
+    <!-- IMAGEN -->
+    <div class="col-md-6 text-center">
+      <img src="ASSETS/IMG/Index/hechizos.jpg" class="img-fluid spells-img">
+    </div>
+
+    <!-- TEXTO -->
+    <div class="col-md-6 text-center text-md-start">
+      <h2>Hechizos</h2>
+      <p>
+        Domina el arte de la magia con una amplia variedad de hechizos. 
+        Desde devastadores ataques elementales hasta encantamientos que 
+        alteran la realidad, el poder está en tus manos.
+      </p>
+      <button class="btn btn-custom">Explorar Hechizos</button>
+    </div>
+
+  </div>
+</section>
+<!-- CARRUSEL -->
+
+    <!-- <section class="carousel-section" data-aos="fade-up">
+    <h2 class="carousel-title">Carrusel de compras</h2>
+
+    <div class="main-carousel">
+        <div class="carousel-cell">
+            <img src="" alt="Compra 1">
+        </div>
+        <div class="carousel-cell">
+            <img src="" alt="Compra 2">
+        </div>
+        <div class="carousel-cell">
+            <img src="" alt="Compra 3">
+        </div>
+         <div class="carousel-cell">
+            <img src="" alt="Compra 3">
+        </div>
+         <div class="carousel-cell">
+            <img src="" alt="Compra 3">
+        </div>
+    </div>
+</section> -->
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- ISOTOPE  -->
@@ -29,7 +316,53 @@
     <!-- API CALL SCRIPT -->
     <script src="js/listPokemon.js"></script>
 
+<!-- Cuidao -->
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
     <!-- MI PROPIO JS -->
-    <script src="js/Script.js"></script>
+    <script src="js/EscritosEnArameo.js"></script>
 </body>
+<footer>
+  
+    <div class="footer-container" >
+
+        <div class="footer-socials" >
+            <a href="https://www.instagram.com/playapex/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/PlayApex" target="_blank">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com/@PlayApex" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.facebook.com/playapex" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+
+        <div class="footer-links">
+            <a href="#">Política de privacidad</a>
+            <a href="#">Términos de uso</a>
+            <a href="#">Información de la empresa</a>
+            <a href="#">Preferencias de cookies</a>
+        </div>
+
+   
+    <!-- <div class="music-player">
+
+  <iframe
+  id="bgMusic"
+  src="https://www.youtube.com/embed/sHA_4wfQhE8?autoplay=1&mute=1&loop=1&playlist=sHA_4wfQhE8"
+  allow="autoplay"
+  frameborder="0">
+</iframe>
+
+<button id="musicBtn">🔊 Activar música</button> -->
+</div>
+    <div>
+
+    </div>
+</footer>
 </html>
