@@ -55,18 +55,20 @@ rollBtn.addEventListener("click", () => {
   }, 800);
 });
 
+const carousel = document.querySelector('.main-carousel');
 
+if (carousel) {
 
-//  let carousel = document.querySelector('.carousel-section');
-// if (carousel) {
-//     new Flickity(carousel, {
-//         cellAlign: 'center',
-//         contain: true,
-//         wrapAround: true,
-//         autoPlay: 3000,
-//         pauseAutoPlayOnHover: true,
-//         imagesLoaded: true
-//     });
-// }
+    new Flickity(carousel, {
+        cellAlign: 'left',
+        contain: true,
+        wrapAround: true,
+        autoPlay: 2500,
+        pauseAutoPlayOnHover: true,
+        imagesLoaded: true,
+        pageDots: false
+    });
+
+}
 
 

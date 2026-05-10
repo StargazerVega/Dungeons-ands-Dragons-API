@@ -5,28 +5,32 @@
     --mainTextColor: #c2c2c2;
     --linkColor: #7ab1e2;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
     background-color: var(--mainBGColor);
     color: var(--mainTextColor);
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
 }
-h1, h2 {
+h1, h2, h3, h4 {
+    font-family: 'Cinzel', serif;
     color: var(--titleTextColor);
 }
-
 p {
     color: var(--mainTextColor);
+    line-height: 1.7;
 }
-.navbar{
-   position: fixed;
-   z-index: 10;
-   width: 100%;
-
-    background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0) 50%,
-    var(--mainBGColor) 100%
-  );
+* ── NAVBAR ────────────────────────────────────────── */
+.navbar {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    padding: 16px 24px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 100%);
+    transition: background 0.4s ease;
 }
 
 
@@ -86,8 +90,7 @@ body.dark {
  }
 .hero {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  padding: 120px 0;
 }
 
 /* Fondo */
@@ -141,19 +144,30 @@ body.dark {
   object-fit: contain;
   transition: transform 0.4s ease;
 }
-.custom-row {
+.card-custom:hover .img-card {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-}ard-custom:hover .img-card {
   transform: scale(1.1) translateY(-10px);
 }
 
 .card-custom {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.card-custom::before {
+  content: "";
+  position: absolute;
+  inset: 0;
 
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.05),
+    transparent
+  );
+
+  border-radius: 20px;
+}
 .card-custom:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.5);
@@ -173,13 +187,13 @@ body.dark {
   color: white;
 }
 .videos-section-pelicula {
-  background-color: var(--secondBGColor);
+ background-color: var(--secondBGColor);
   border-top: 2px solid var(--titleTextColor);
-  padding: 50px 10px;
-  border-radius: 10px;
+  padding: 60px 40px;
+  border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-  max-width: 662px;
-  width: 50%;
+
+  width: 100%;
 }
 
 .videos-section-pelicula h2 {
@@ -321,6 +335,15 @@ iframe {
   0% { transform: rotate(0deg) scale(1); }
   50% { transform: rotate(360deg) scale(1.3); }
   100% { transform: rotate(720deg) scale(1); }
+}
+model-viewer {
+  animation: floatModel 4s ease-in-out infinite;
+}
+
+@keyframes floatModel {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 /* #bgMusic {
   position: fixed;
@@ -522,5 +545,120 @@ iframe {
 .footer-links a:hover {
     color: white;
     
+}
+
+.carousel-section {
+  padding: 80px 0;
+}
+
+.carousel-title {
+  color: var(--titleTextColor);
+  font-size: 42px;
+  font-weight: bold;
+}
+
+/* BOTONES ARRIBA */
+.carousel-categories {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.carousel-categories button {
+  border: none;
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.carousel-categories button:hover,
+.carousel-categories .active {
+  color: var(--titleTextColor);
+}
+
+/* FLICKITY */
+.main-carousel {
+  margin-top: 30px;
+}
+
+.carousel-cell {
+  width: 280px;
+  margin-right: 25px;
+}
+
+/* CARD */
+.market-card {
+  background: var(--secondBGColor);
+  border-radius: 18px;
+  overflow: hidden;
+
+  transition: transform 0.4s ease,
+              box-shadow 0.4s ease;
+}
+
+.market-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* IMAGEN */
+.market-card img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+.market-card:hover img {
+  transform: scale(1.05);
+}
+
+/* INFO */
+.market-info {
+  padding: 20px;
+}
+
+.market-info span {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.market-info h3 {
+  color: white;
+  font-size: 28px;
+  margin: 10px 0 20px;
+}
+
+/* ABAJO */
+.market-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.market-bottom p {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--titleTextColor);
+}
+
+.market-bottom button {
+  border: none;
+  background: crimson;
+  color: white;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 12px;
+
+  transition: 0.3s;
+}
+
+.market-bottom button:hover {
+  transform: scale(1.1);
 }
 
