@@ -78,6 +78,18 @@ p {
 .navbar-nav {
     gap: 30px;
 }
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* icono blanco en fondo oscuro */
+.navbar-dark .navbar-toggler-icon {
+    filter: invert(1);
+}
 .logoMain {
     position: absolute;
     top: 50%;
@@ -131,6 +143,7 @@ p {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: visible;
     isolation: isolate;
+     border: 2px solid rgba(210, 154, 56, 0.25);
 }
 
 .card-custom::before {
@@ -174,6 +187,7 @@ p {
     object-fit: contain;
     transition: transform 0.4s ease;
     pointer-events: none;
+    
 }
 
 .card-custom:hover {
@@ -286,6 +300,7 @@ iframe {
 }
 .dice-model {
   width: 100%;
+   border: 2px solid rgba(210, 154, 56, 0.25);
   height: 320px;
 
   border-radius: 20px;
@@ -305,6 +320,7 @@ iframe {
 /* LAYOUT */
 .dice-section .row {
   min-height: 350px;
+  
 }
 
 .dice-left,
@@ -312,11 +328,13 @@ iframe {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
 }
 
 .dice-right {
   text-align: left;
   padding-left: 30px;
+  
 }
 
 /* TEXTO */
@@ -335,6 +353,7 @@ iframe {
 .dice-container {
   position: relative;
   display: inline-block;
+  
 }
 
 .dice-img {
@@ -377,27 +396,36 @@ model-viewer {
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
-
+ /* Seccion 4 */
 .characters-section {
   background-color: var(--secondBGColor);
   border-radius: 15px;
-  padding: 60px 30px;
+  padding: 35px 25px;
+   border: 2px solid rgba(210, 154, 56, 0.25);
 }
 
-.characters-section h2 {
-  color: var(--titleTextColor);
-}
 
-.characters-section p {
+.content-box p {
   color: var(--mainTextColor);
+  margin: 10px 0 15px 0; /* control fino del espacio */
+  line-height: 1.5; /* más compacto pero legible */
 }
 
-/* Botón personalizado */
+.section-label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+/* BOTÓN */
 .btn-custom {
   background-color: var(--titleTextColor);
   color: black;
   border: none;
-  padding: 10px 20px;
+  padding: 8px 18px; /* más compacto */
+  font-size: 14px;
 }
 
 .btn-custom:hover {
@@ -407,6 +435,7 @@ model-viewer {
   background-color: var(--secondBGColor);
   border-radius: 15px;
   padding: 60px 30px;
+   border: 2px solid rgba(210, 154, 56, 0.25);
 }
 
 .spells-section h2 {
@@ -451,6 +480,7 @@ model-viewer {
   border-radius: 15px;
   position: relative;
   overflow: hidden;
+   border: 2px solid rgba(210, 154, 56, 0.25);
 }
 
 /* CARDS PEQUEÑAS */
@@ -459,6 +489,7 @@ model-viewer {
   border-radius: 15px;
   position: relative;
   overflow: hidden;
+   border: 2px solid rgba(210, 154, 56, 0.25);
 }
 
 /* imágenes */
@@ -486,7 +517,7 @@ model-viewer {
   color: white;
 }
 
-/* HOVER PRO */
+
 .card-img-big,
 .card-img-small {
   transition: transform 0.4s ease, filter 0.4s ease;
@@ -497,8 +528,52 @@ model-viewer {
   transform: scale(1.05);
   filter: brightness(1.1);
 }
+/* Animacion */
+.animated-series-section {
+  background:var(--secondBGColor);
+  border-radius: 18px;
+  padding: 50px 25px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  border: 1px solid rgba(210, 154, 56, 0.2);
+}
+
+.animated-series-section h2 {
+  color: var(--titleTextColor);
+  margin-bottom: 10px;
+}
 
 
+.animated-series-section p {
+  color: var(--mainTextColor);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+
+.animated-series-section .section-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--titleTextColor);
+  opacity: 0.8;
+}
+
+/* caja del video */
+.video-box {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+  border: 2px solid rgba(210, 154, 56, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-box:hover {
+  transform: scale(1.01);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+}
+/* Footer */
 .footer {
     width: 100%;
     background: linear-gradient(to top, #000, #111);
@@ -686,5 +761,24 @@ model-viewer {
 @media (max-width: 768px) {
     .footer-decoration {
         display: none;
+    }
+      .navbar-collapse {
+        background: rgba(10, 12, 20, 0.97);
+        backdrop-filter: blur(10px);
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    .navbar-nav {
+        gap: 10px;
+        text-align: center;
+    }
+
+    .nav-link {
+        padding: 12px 0;
+        font-size: 15px;
+        letter-spacing: 1px;
     }
 }
