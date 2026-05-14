@@ -78,18 +78,6 @@ p {
 .navbar-nav {
     gap: 30px;
 }
-.navbar-toggler {
-    border: none;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
-}
-
-/* icono blanco en fondo oscuro */
-.navbar-dark .navbar-toggler-icon {
-    filter: invert(1);
-}
 .logoMain {
     position: absolute;
     top: 50%;
@@ -106,6 +94,52 @@ p {
     height: 40px;   /* ajusta entre 30–60px a gusto */
     width: auto;
 }
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+}
+
+/* MENÚ MOBILE */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    flex-direction: column;
+    background: rgba(10, 12, 20, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 12px;
+    gap: 10px;
+    z-index: 150;
+}
+
+/* ACTIVO */
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+}
+
+
+
 .PORTADA::before {
   content: "";
   position: absolute;
@@ -762,23 +796,12 @@ model-viewer {
     .footer-decoration {
         display: none;
     }
-      .navbar-collapse {
-        background: rgba(10, 12, 20, 0.97);
-        backdrop-filter: blur(10px);
-        padding: 15px;
-        margin-top: 10px;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+     .hamburger {
+        display: flex;
     }
 
+    /* ocultamos el Bootstrap menu en móvil */
     .navbar-nav {
-        gap: 10px;
-        text-align: center;
-    }
-
-    .nav-link {
-        padding: 12px 0;
-        font-size: 15px;
-        letter-spacing: 1px;
+        display: none;
     }
 }
