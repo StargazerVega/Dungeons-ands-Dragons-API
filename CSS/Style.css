@@ -31,7 +31,7 @@ html, body {
    ============================================================= */
 @font-face {
     font-family: roboto ;
-    src: url(/ASSETS/FONTS/Roboto-Regular.ttf);
+    src: url(https://stargazervega.github.io/Dungeons-ands-Dragons-API/ASSETS/FONTS/Roboto-Regular.ttf);
 }
 
 *{
