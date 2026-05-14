@@ -245,6 +245,9 @@ nav.navbar {
     overflow: visible;
     isolation: isolate;
     border: 2px solid rgba(210, 154, 56, 0.25);
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .card-custom::before {
@@ -261,7 +264,7 @@ nav.navbar {
     position: relative;
     z-index: 5;
     height: 240px;
-    width: 48%;
+   
 }
 
 .card-content h2 { 
@@ -720,6 +723,29 @@ transition: transform 0.4s ease; }
     .dice-video-box { padding: 30px 20px; }
 
     .videos-section-pelicula { padding: 40px 20px; }
+    .card-custom {
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  .card-content {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  .card-img {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin-bottom: 15px;
+  }
+
+  .img-card {
+    max-width: 100%;
+    height: auto;
+  }
+
 }
 
 @media (max-width: 576px) {
