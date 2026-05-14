@@ -70,7 +70,7 @@ async function loadClassDetails(classIndex, className) {
     $section.html(
         '<div class="text-center py-5">' +
             '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div>' +
-            '<p class="mt-3 text-muted small">Loading ' + className + '…</p>' +
+            '<p class="mt-3  small">Loading ' + className + '…</p>' +
         '</div>'
     );
     $('html, body').animate({ scrollTop: $section.offset().top - 80 }, 600);
@@ -284,24 +284,42 @@ function renderClassDetails(classData, levelsData, featuresById) {
         '</div>';
 
     $('.levelUpCont').html(sectionHTML);
+}
 
-    //Link de las Features de la tabla al acordeón
-    $(document).on('click', '.feat-link', function () {
-        var featIndex = $(this).data('feature');
-        var $collapse = $('#feat-' + featIndex);
-        if ($collapse.length) {
-            //Bootstrap 5 collapse API
-            var bsCollapse = bootstrap.Collapse.getOrCreateInstance($collapse[0], { toggle: false });
-            bsCollapse.show();
-            setTimeout(function () {
-                var $wrap = $('#feat-wrap-' + featIndex);
-                if ($wrap.length) {
-                    $('html, body').animate({ scrollTop: $wrap.offset().top - 80 }, 400);
-                }
-            }, 200);
+//Link de las Features de la tabla al acordeón
+$(document).on('click', '.feat-link', function () {
+
+    var featIndex = $(this).data('feature');
+    var $collapse = $('#feat-' + featIndex);
+
+    if (!$collapse.length) return;
+
+    var bsCollapse = bootstrap.Collapse.getOrCreateInstance(
+        $collapse[0],
+        { toggle: false }
+    );
+
+    $collapse.one('shown.bs.collapse', function () {
+
+        var target = document.getElementById('feat-wrap-' + featIndex);
+
+        if (target) {
+
+            // offset manual para compensar navbar
+            var y = target.getBoundingClientRect().top + window.pageYOffset - 80;
+
+            window.scrollTo({
+                top: y,
+                behavior: 'smooth'
+            });
         }
     });
-}
+
+    bsCollapse.show();
+});
+
+
+
 
 //Función para excepciones en las columnas de la tabla
 function formatSpecificVal(key, val) {
