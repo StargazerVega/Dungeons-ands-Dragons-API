@@ -246,3 +246,11 @@ function buildSpellDetail(spell) {
         '</div>'
     );
 }
+// ── NAVBAR HAMBURGER
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+});
