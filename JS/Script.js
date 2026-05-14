@@ -54,6 +54,30 @@ var levelNum = ['Lvl.1','Lvl.2','Lvl.3','Lvl.4','Lvl.5','Lvl.6','Lvl.7','Lvl.8',
 
 $(document).ready(function () {
              
+// =====================================================
+// THEME TOGGLE
+// =====================================================
+
+$('#themeToggle').on('click', function () {
+
+    var $body = $('body');
+
+    if ($body.hasClass('dark')) {
+
+        $body.removeClass('dark').addClass('light');
+
+        $(this).text('🌙 Dark Mode');
+
+    } else {
+
+        $body.removeClass('light').addClass('dark');
+
+        $(this).text('☀️ Light Mode');
+    }
+});
+
+
+
 //Botón de seleccióin de clase
 $(document).on('click', '.selectClassBtn', function (e) {
     e.preventDefault();

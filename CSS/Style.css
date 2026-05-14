@@ -1014,6 +1014,574 @@ body.light > .title {
 .fire-explosion.boom .exp-spark.s3 { animation: sparkFly 0.65s ease-out 0.15s forwards; --r: -135deg; --d: -28px,  28px; }
 .fire-explosion.boom .exp-spark.s4 { animation: sparkFly 0.65s ease-out 0.15s forwards; --r:  135deg; --d:  28px,  28px; }
  
+
+/* =============================================================
+   LIGHT MODE
+   ============================================================= */
+
+body.light {
+    background-color: var(--LsecondBGColor);
+}
+
+body.light > * {
+    background-color: var(--LmainBGColor);
+    color: var(--LmainTextColor);
+}
+
+/* NAVBAR */
+
+body.light .navbar {
+    background-color: var(--LsecondBGColor);
+    border-bottom: 1px solid rgba(228, 7, 18, 0.2);
+}
+
+body.light .navbar .nav-link {
+    color: var(--LmainTextColor);
+}
+
+body.light .navbar .nav-link:hover,
+body.light .navbar .nav-link.active {
+    color: var(--LtitleTextColor);
+}
+
+/* FILTERS */
+
+body.light .filter {
+    background-color: var(--LsecondBGColor);
+    color: var(--LmainTextColor);
+    border-color: rgba(228, 7, 18, 0.25);
+}
+
+body.light .filter:hover {
+    background-color: rgba(228, 7, 18, 0.08);
+    color: var(--LtitleTextColor);
+    border-color: var(--LtitleTextColor);
+}
+
+body.light .filter.active {
+    background-color: var(--LtitleTextColor);
+    color: white;
+    border-color: var(--LtitleTextColor);
+}
+
+/* CLASS CARDS */
+
+body.light .class-card {
+    background-color: var(--LsecondBGColor);
+    border-color: rgba(228, 7, 18, 0.15);
+}
+
+body.light .class-card:hover {
+    border-color: var(--LtitleTextColor);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+body.light .class-card .card-title {
+    color: #ffffff;
+}
+
+body.light .class-card .card-text {
+    color: #f3f3f3;
+}
+
+/* DETAIL SECTION */
+
+body.light .levelUpCont,
+body.light .class-detail-container {
+    background-color: var(--LmainBGColor);
+}
+
+body.light .class-detail-title,
+body.light .section-subtitle,
+body.light .meta-label {
+    color: var(--LtitleTextColor);
+}
+
+body.light .meta-value {
+    color: var(--LmainTextColor);
+}
+
+/* TABLE */
+
+body.light .class-table > :not(caption) > * > * {
+    background-color: var(--LsecondBGColor);
+    color: var(--LmainTextColor);
+    border-color: rgba(0,0,0,0.08);
+}
+
+body.light .class-table thead {
+    background-color: rgba(228, 7, 18, 0.08);
+}
+
+body.light .class-table thead th {
+    color: var(--LtitleTextColor);
+    border-color: rgba(228, 7, 18, 0.18);
+}
+
+body.light .class-table tbody tr:hover {
+    background-color: rgba(228, 7, 18, 0.05);
+}
+
+body.light .prof-cell,
+body.light .feat-link {
+    color: var(--LlinkColor);
+}
+
+body.light .feat-link:hover {
+    color: var(--LtitleTextColor);
+}
+
+body.light .empty-cell {
+    color: rgba(41, 4, 4, 0.35);
+}
+
+/* ACCORDION */
+
+body.light .features-accordion .accordion-item {
+    background-color: var(--LsecondBGColor);
+    border-color: rgba(228, 7, 18, 0.12);
+}
+
+body.light .features-accordion .accordion-button {
+    background-color: var(--LsecondBGColor);
+    color: var(--LmainTextColor);
+}
+
+body.light .features-accordion .accordion-button:not(.collapsed) {
+    background-color: rgba(228, 7, 18, 0.08);
+    color: var(--LtitleTextColor);
+}
+
+body.light .features-accordion .accordion-body {
+    background-color: rgba(255,255,255,0.55);
+    color: var(--LmainTextColor);
+    border-top: 1px solid rgba(228, 7, 18, 0.12);
+}
+
+/* BUTTON */
+
+.theme-toggle-btn {
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: inherit;
+    padding: 0.35rem 0.85rem;
+    border-radius: 5px;
+    font-size: 0.82rem;
+    transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    transform: translateY(-1px);
+}
+
+body.light .theme-toggle-btn {
+    border-color: rgba(228, 7, 18, 0.2);
+    color: var(--LmainTextColor);
+}
+
+body.light .theme-toggle-btn:hover {
+    background-color: rgba(228, 7, 18, 0.08);
+}
+
+body.dark .theme-toggle-btn:hover {
+    background-color: rgba(210, 154, 56, 0.12);
+}
+/* =============================================================
+   LIGHT MODE — CLASS CARDS
+   ============================================================= */
+
+body.light .class-card {
+    background-color: var(--LsecondBGColor);
+    border: 1px solid rgba(228, 7, 18, 0.15);
+}
+
+body.light .class-card:hover {
+    border-color: var(--LtitleTextColor);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagen menos oscura */
+body.light .class-card .card-img {
+    opacity: 0.82;
+}
+
+/* Overlay adaptado a fondo claro */
+body.light .class-card .card-img-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(237, 244, 255, 0.96) 0%,
+        rgba(237, 244, 255, 0.78) 45%,
+        rgba(237, 244, 255, 0.15) 100%
+    );
+}
+
+/* Textos */
+body.light .class-card .card-title {
+    color: var(--LtitleTextColor);
+    text-shadow: none;
+}
+
+body.light .class-card .card-text {
+    color: var(--LmainTextColor);
+    text-shadow: none;
+}
+
+/* =============================================================
+   LIGHT MODE — CARD BUTTON
+   ============================================================= */
+
+body.light .selectClassBtn {
+    background-color: var(--LsecondBGColor);
+    color: var(--LmainTextColor);
+    border: 1px solid rgba(228, 7, 18, 0.18);
+}
+
+body.light .selectClassBtn:hover {
+    background-color: var(--LlinkColor);
+    color: white;
+    border-color: var(--LlinkColor);
+    box-shadow: 0 8px 18px rgba(68, 207, 133, 0.22);
+}
+
+body.light .selectClassBtn:active {
+    background-color: var(--LtitleTextColor);
+    border-color: var(--LtitleTextColor);
+}
+
+/* =============================================================
+   LIGHT MODE — CATEGORY BADGES
+   ============================================================= */
+
+body.light .category-badge.martial {
+    background-color: rgba(228, 7, 18, 0.10);
+    color: #b00008;
+    border: 1px solid rgba(228, 7, 18, 0.22);
+}
+
+body.light .category-badge.caster {
+    background-color: rgba(68, 140, 255, 0.10);
+    color: #245ed6;
+    border: 1px solid rgba(68, 140, 255, 0.20);
+}
+
+body.light .category-badge.half-caster {
+    background-color: rgba(140, 90, 255, 0.10);
+    color: #6b38d1;
+    border: 1px solid rgba(140, 90, 255, 0.22);
+}
+
+/* =============================================================
+   LIGHT MODE — META + LINKS
+   ============================================================= */
+
+body.light .feat-link {
+    color: #1b9d5f;
+}
+
+body.light .feat-link:hover {
+    color: var(--LtitleTextColor);
+}
+
+body.light .prof-cell {
+    color: #1b9d5f;
+}
+
+/* =============================================================
+   LIGHT MODE — ACCORDION LEVEL BADGES
+   ============================================================= */
+
+body.light .feat-level-badge {
+    background-color: rgba(228, 7, 18, 0.10);
+    color: var(--LtitleTextColor);
+}
+
+/* =============================================================
+   LIGHT MODE — TABLE HOVER
+   ============================================================= */
+
+body.light .class-table tbody tr:hover td {
+    background-color: rgba(228, 7, 18, 0.04);
+}
+
+/* =============================================================
+LIGHT MODE — SPELLS PAGE
+============================================================= */
+
+/* ── Main backgrounds ── */
+body.light .spells-controls-bar {
+    background-color: var(--LsecondBGColor);
+    border-bottom: 1px solid rgba(228, 7, 18, 0.15);
+}
+
+body.light #spellsCont {
+    background-color: transparent;
+}
+
+/* =============================================================
+TABLE HEADER
+============================================================= */
+
+body.light .spells-table-header {
+    background-color: rgba(228, 7, 18, 0.06);
+    border-bottom: 2px solid rgba(228, 7, 18, 0.2);
+    color: var(--LtitleTextColor);
+}
+
+/* =============================================================
+SPELL ROWS
+============================================================= */
+
+body.light .spell-item {
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+body.light .spell-item:hover {
+    background-color: rgba(228, 7, 18, 0.04);
+}
+
+body.light .spell-item.spell-open {
+    background-color: rgba(228, 7, 18, 0.05);
+    border-bottom-color: rgba(228, 7, 18, 0.16);
+}
+
+body.light .spell-row {
+    color: var(--LmainTextColor);
+}
+
+/* =============================================================
+CHEVRON
+============================================================= */
+
+body.light .chevron-icon {
+    color: rgba(41, 4, 4, 0.35);
+}
+
+body.light .spell-item.spell-open .chevron-icon {
+    color: var(--LtitleTextColor);
+}
+
+/* =============================================================
+SCHOOL IMAGE WRAP
+============================================================= */
+
+body.light .school-img-wrap {
+    background-color: rgba(255,255,255,0.55);
+    backdrop-filter: blur(3px);
+}
+
+/* =============================================================
+LEVEL BADGES
+============================================================= */
+
+body.light .level-badge {
+    background-color: rgba(0,0,0,0.05);
+    color: var(--LmainTextColor);
+}
+
+/* Cantrip */
+body.light .level-badge.lvl-0 {
+    background-color: rgba(135,206,235,0.16);
+    color: #287fa3;
+}
+
+/* 1-2 */
+body.light .level-badge.lvl-1,
+body.light .level-badge.lvl-2 {
+    background-color: rgba(163,217,119,0.16);
+    color: #4c8b28;
+}
+
+/* 3-4 */
+body.light .level-badge.lvl-3,
+body.light .level-badge.lvl-4 {
+    background-color: rgba(122,177,226,0.16);
+    color: #2e6ea8;
+}
+
+/* 5-6 */
+body.light .level-badge.lvl-5,
+body.light .level-badge.lvl-6 {
+    background-color: rgba(210,154,56,0.16);
+    color: #9a6708;
+}
+
+/* 7-8 */
+body.light .level-badge.lvl-7,
+body.light .level-badge.lvl-8 {
+    background-color: rgba(240,128,128,0.16);
+    color: #b54b4b;
+}
+
+/* 9 */
+body.light .level-badge.lvl-9 {
+    background-color: rgba(194,163,224,0.18);
+    color: #6f43a8;
+}
+
+/* =============================================================
+COMPONENTS
+============================================================= */
+
+body.light .components-text {
+    color: var(--LmainTextColor);
+}
+
+body.light .material-indicator {
+    color: var(--LtitleTextColor);
+}
+
+/* =============================================================
+EXPAND PANEL
+============================================================= */
+
+body.light .spell-expand-panel {
+    border-top: 1px solid rgba(228, 7, 18, 0.12);
+}
+
+/* =============================================================
+DETAIL BODY
+============================================================= */
+
+body.light .spell-detail-body {
+    background-color: rgba(255,255,255,0.35);
+}
+
+body.light .spell-detail-title-bar {
+    border-bottom: 1px solid rgba(228, 7, 18, 0.12);
+}
+
+body.light .spell-detail-name {
+    color: var(--LtitleTextColor);
+}
+
+body.light .spell-detail-subtitle {
+    color: rgba(41, 4, 4, 0.65);
+}
+
+body.light .spell-description p {
+    color: var(--LmainTextColor);
+}
+
+body.light .spell-detail-block {
+    border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+body.light .detail-block-title {
+    color: var(--LtitleTextColor);
+}
+
+/* =============================================================
+META PANEL
+============================================================= */
+
+body.light .detail-meta-grid {
+    background-color: rgba(255,255,255,0.55);
+    border: 1px solid rgba(228, 7, 18, 0.10);
+}
+
+body.light .detail-meta-item {
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+body.light .detail-meta-label {
+    color: var(--LtitleTextColor);
+}
+
+body.light .detail-meta-value {
+    color: var(--LmainTextColor);
+}
+
+body.light .dmg-value {
+    color: rgba(41, 4, 4, 0.78);
+}
+
+body.light .material-note {
+    color: rgba(41, 4, 4, 0.62);
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* =============================================================
+CLASS TAGS
+============================================================= */
+
+body.light .class-tag {
+    background-color: rgba(68, 207, 133, 0.10);
+    color: #1b9d5f;
+    border: 1px solid rgba(68, 207, 133, 0.20);
+}
+
+/* =============================================================
+SPELL TAGS
+============================================================= */
+
+body.light .tag-concentration {
+    background-color: rgba(122,177,226,0.12);
+    color: #2d6f9c;
+    border: 1px solid rgba(122,177,226,0.22);
+}
+
+body.light .tag-ritual {
+    background-color: rgba(163,217,119,0.14);
+    color: #4d892c;
+    border: 1px solid rgba(163,217,119,0.22);
+}
+
+body.light .tag-attack {
+    background-color: rgba(240,128,128,0.12);
+    color: #b24d4d;
+    border: 1px solid rgba(240,128,128,0.22);
+}
+
+/* =============================================================
+FIRE LOADER
+============================================================= */
+
+body.light .fire-loader-text {
+    color: var(--LmainTextColor);
+}
+
+body.light .fire-bar-track {
+    background: rgba(0,0,0,0.04);
+    border: 1px solid rgba(228, 7, 18, 0.12);
+}
+
+/* =============================================================
+SPINNER
+============================================================= */
+
+body.light .spinner-border {
+    color: var(--LtitleTextColor);
+}
+
+/* =============================================================
+SCROLLBAR
+============================================================= */
+
+body.light ::-webkit-scrollbar {
+    width: 10px;
+}
+
+body.light ::-webkit-scrollbar-track {
+    background: var(--LsecondBGColor);
+}
+
+body.light ::-webkit-scrollbar-thumb {
+    background: rgba(228, 7, 18, 0.25);
+    border-radius: 20px;
+}
+
+body.light ::-webkit-scrollbar-thumb:hover {
+    background: rgba(228, 7, 18, 0.4);
+}
+
+
+
+
+
+
+
+
+
 /* ── Keyframes ── */
  
 @keyframes fireGlow {

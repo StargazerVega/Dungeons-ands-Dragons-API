@@ -30,6 +30,24 @@ var spellCache    = {};
 // ── Init ──────────────────────────────────────────────────────
 $(document).ready(function () {
     loadSpells();
+    
+    $('#themeToggle').on('click', function () {
+
+    var $body = $('body');
+
+    if ($body.hasClass('dark')) {
+
+        $body.removeClass('dark').addClass('light');
+
+        $(this).text('🌙 Dark Mode');
+
+    } else {
+
+        $body.removeClass('light').addClass('dark');
+
+        $(this).text('☀️ Light Mode');
+    }
+});
 });
  
 // ── Helpers ───────────────────────────────────────────────────
