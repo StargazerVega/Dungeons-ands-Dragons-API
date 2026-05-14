@@ -45,10 +45,7 @@
                             <a class="nav-link" href="#seccion-hechizos">Hechizos</a>
                         </li>
                     </ul>
-                    <div class="d-flex">
-                        <input class="form-control me-2" type="text" placeholder="Buscar">
-                        <button class="btn btn-primary" type="button">Buscar</button>
-                    </div>
+                    
                 </div>
             </div>
         </nav>
@@ -69,37 +66,45 @@
             <div class="row custom-row justify-content-center g-4">
 
                 <!-- CARD 1 -->
-                <div class="col-md-5">
-                    <div data-aos="fade-right" class="card-custom card-dark position-relative">
-                        <div class="card-img">
-                            <img src="ASSETS/IMG/Index/PersonajesIndex.webp" alt="Personajes D&D" class="img-fluid img-card">
-                        </div>
-                        <h2>Clases Tier</h2>
-                        <p>Unlimited character slots, monthly perks, and more.</p>
-                        <a href="#seccion-clases" class="btn btn-light scroll-btn">JOIN CLASES TIER</a>
-                    </div>
-                </div>
+<div class="col-md-5 hero-card-col">
+    <div data-aos="fade-right" class="card-custom card-dark card-clases position-relative">
+        
+        <div class="card-img">
+            <img src="ASSETS/IMG/Index/PersonajesIndex.webp" alt="Personajes D&D" class="img-fluid img-card">
+        </div>
 
-                <!-- CARD 2 -->
-                <div class="col-md-5">
-                    <div data-aos="fade-left" class="card-custom card-gold position-relative">
-                        <div class="card-img">
-                            <img src="ASSETS/IMG/Index/HechizosIndex.webp" alt="Hechizos D&D" class="img-fluid img-card">
-                        </div>
-                        <h2>Hechizos Tier</h2>
-                        <p>Share content, use homebrew and more.</p>
-                        <a href="#seccion-hechizos" class="btn btn-light scroll-btn">JOIN HECHIZOS TIER</a>
-                    </div>
-                </div>
+        <div class="card-content">
+            <h2>Clases Tier</h2>
+            <p>Unlimited character slots, monthly perks, and more.</p>
+            <a href="#seccion-clases" class="btn btn-light scroll-btn">JOIN CLASES TIER</a>
+        </div>
 
-            </div>
+    </div>
+</div>
+
+<div class="col-md-5 hero-card-col">
+    <div data-aos="fade-left" class="card-custom card-gold card-hechizos position-relative">
+        
+        <div class="card-img">
+            <img src="ASSETS/IMG/Index/HechizosIndex.webp" alt="Hechizos D&D" class="img-fluid img-card">
+        </div>
+
+        <div class="card-content">
+            <h2>Hechizos Tier</h2>
+            <p>Share content, use homebrew and more.</p>
+            <a href="#seccion-hechizos" class="btn btn-light scroll-btn">JOIN HECHIZOS TIER</a>
+        </div>
+
+    </div>
+</div>
         </div>
     </section>
+
 
     <!-- VIDEOS -->
     <section class="videos-section-pelicula container my-5">
         <h2 class="section-title mb-5">Videos</h2>
-        <div class="row g-4 justify-content-center">
+        <div class="row g-5 justify-content-center">
             <div class="col-md-5 video-item">
                 <div class="ratio ratio-16x9">
                     <iframe src="https://www.youtube.com/embed/IiMinixSXII" title="Dungeons & Dragons Fan Expo, London" allowfullscreen></iframe>
@@ -109,8 +114,9 @@
             </div>
             <div class="col-md-5 video-item">
                 <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/8K2Cc0n_2IE" title="D&D en Discord" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/GC4vw4tzi7w"  title="D&D en Discord" allowfullscreen></iframe>
                 </div>
+                 <h4>Dungeons & Dragons Fan Expo, London</h4>
                 <p>Meet fellow adventurers...</p>
             </div>
         </div>
@@ -221,14 +227,25 @@
     <section id="seccion-hechizos" class="spells-section container my-5" data-aos="fade-up">
         <div class="row align-items-center">
             <div class="col-md-6 text-center">
-                <img src="ASSETS/IMG/Index/hechizos.jpg" alt="Hechizos Dungeons and Dragons" class="img-fluid spells-img">
-            </div>
+    <a href="https://nivel20.com/games/dnd-5/spells" target="_blank" rel="noopener">
+        <img src="ASSETS/IMG/Index/pngtree-spell-book-isolated-on-transparent-background-png-image_16752725.webp" 
+             alt="Hechizos Dungeons and Dragons" 
+             class="img-fluid spells-img">
+    </a>
+</div>
             <div class="col-md-6 text-center text-md-start">
-                <span class="section-label">Magia</span>
-                <h2>Hechizos</h2>
-                <p>Domina el arte de la magia con una amplia variedad de hechizos. Desde devastadores ataques elementales hasta encantamientos que alteran la realidad, el poder está en tus manos.</p>
-                <button class="btn btn-custom">Explorar Hechizos</button>
-            </div>
+    <span class="section-label">Magic</span>
+    <h2>Spells</h2>
+    <p>
+        Master the art of magic with a wide variety of spells.
+        From devastating elemental attacks to reality-bending enchantments,
+        the power is in your hands.
+    </p>
+
+    <a href="spells.html" class="btn btn-custom">
+        Explore Spells
+    </a>
+</div>
         </div>
     </section>
 
@@ -272,7 +289,7 @@
         <div class="market-card">
             <img src="ASSETS/IMG/Index/book3.jpg" alt="Heroes of the Borderlands">
             <div class="market-info">
-                <span>D&amp;D Beyond</span>
+                <span>D&D Beyond</span>
                 <h3>Heroes of the Borderlands</h3>
                 <div class="market-bottom">
                     <p>$49.99</p>
@@ -314,7 +331,7 @@
         <div class="market-card">
             <img src="ASSETS/IMG/Index/criatura.webp" alt="Heroes of the Borderlands">
             <div class="market-info">
-                <span>D&amp;D Beyond</span>
+                <span>D&D Beyond</span>
                 <h3>Borderlands</h3>
                 <div class="market-bottom">
                     <p>$49.99</p>
@@ -347,12 +364,13 @@
                 <a href="#">Política de privacidad</a>
                 <a href="#">Términos de uso</a>
                 <a href="#">Información de la empresa</a>
-                <a href="#">Preferencias de cookies</a>
+            
             </div>
-            <div class="music-player">
-                <button id="musicBtn">🔊 Activar música</button>
-            </div>
+            
         </div>
+         <img src="ASSETS/IMG/Index/criatura.webp" 
+         alt="Decoración D&D" 
+         class="footer-decoration">
     </footer>
 
     <!-- Bootstrap JS -->

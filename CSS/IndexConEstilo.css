@@ -45,7 +45,7 @@ p {
     font-size: 13px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.8) ;
+    color: var(--mainTextColorr);
     position: relative;
     padding-bottom: 4px;
     transition: color 0.3s;
@@ -69,7 +69,15 @@ p {
 .navbar .nav-link:hover::after {
     width: 100%;
 }
-
+.navbar .nav-item {
+    margin-right: 25px;
+}
+.navbar .container-fluid {
+    gap: 40px;
+}
+.navbar-nav {
+    gap: 30px;
+}
 .logoMain {
     position: absolute;
     top: 50%;
@@ -107,16 +115,22 @@ p {
 }
 
 /* CARDS HERO */
+.hero-card-col {
+    position: relative;
+    overflow: visible;
+}
+
 .card-custom {
     position: relative;
-    padding: 50px;
+    padding: 55px 50px;
     border-radius: 20px;
     text-align: left;
     width: 100%;
     min-height: 250px;
     max-width: 800px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
+    overflow: visible;
+    isolation: isolate;
 }
 
 .card-custom::before {
@@ -125,6 +139,41 @@ p {
     inset: 0;
     background: linear-gradient(135deg, rgba(255,255,255,0.06), transparent);
     border-radius: 20px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.card-content {
+    position: relative;
+    z-index: 5;
+    height: 240px;
+    width: 48%;
+}
+
+.card-content h2 {
+    margin-bottom: 18px;
+}
+
+.card-content p {
+    margin-bottom: 22px;
+}
+
+.card-img {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-card {
+    max-width: none;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+    pointer-events: none;
 }
 
 .card-custom:hover {
@@ -132,51 +181,48 @@ p {
     box-shadow: 0 24px 50px rgba(0,0,0,0.6);
 }
 
-.card-img {
-    position: relative;
-    right: -40px;
-    bottom: 0;
-    z-index: 1;
-    display: flex;
-}
-
-.img-card {
-    object-fit: contain;
-    transition: transform 0.4s ease;
-}
-
 .card-custom:hover .img-card {
-    transform: scale(1.1) translateY(-10px);
-}
-
-.card-dark {
-    background: rgba(31, 34, 46, 0.85);
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-}
-
-.card-gold {
-    background: linear-gradient(135deg, #d29a38, #8c6b2a);
-    color: white;
-    box-shadow: 0 8px 32px rgba(210,154,56,0.25);
+    transform: scale(1.05) translateY(-8px);
 }
 
 .scroll-btn {
+    position: relative;
+    z-index: 10;
     display: inline-block;
     font-family: 'Inter', sans-serif;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
+.card-clases .card-img {
+    right: -20px;
+    top: -150px;
+    bottom: auto;
+}
 
+.card-clases .img-card {
+    height: auto;
+    width: auto;
+}
+
+.card-hechizos .card-img {
+    right: -45px;
+    top: -90px;
+    bottom: auto;
+}
+
+.card-hechizos .img-card {
+    height: 360px;
+}
+
+/* Videos */
 .videos-section-pelicula {
  background-color: var(--secondBGColor);
   border-top: 2px solid var(--titleTextColor);
   padding: 60px 40px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-
   width: 100%;
 }
 
@@ -194,12 +240,13 @@ p {
 
 /* efecto hover suave */
 .video-item {
-   color: var(--mainTextColor);
+  color: var(--mainTextColor);
   background: rgba(0,0,0,0.3);
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 0 15px;
 }
 
 .video-item:hover {
@@ -214,8 +261,9 @@ iframe {
 
 
 
-/* CAJA TIPO VIDEO */
+/* CAJA dado */
 .dice-video-box {
+  
   background: linear-gradient(
     145deg,
     #1f222e,
@@ -329,24 +377,6 @@ model-viewer {
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
 }
-/* #bgMusic {
-  position: fixed;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  pointer-events: none;
-}
-
-#musicBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #d29a38;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 10px;
-  cursor: pointer;
-} */
 
 .characters-section {
   background-color: var(--secondBGColor);
@@ -416,7 +446,7 @@ model-viewer {
 
 /* CARD GRANDE */
 .card-img-big {
-  background: url("ASSETS/IMG/Index/personaje-grande.jpg") center/cover no-repeat;
+  background: url("/ASSETS/IMG/Index/fondoCaracters.webp") center/cover no-repeat;
   height: 400px;
   border-radius: 15px;
   position: relative;
@@ -433,11 +463,11 @@ model-viewer {
 
 /* imágenes */
 .card-1 {
-  background: url("ASSETS/IMG/Index/campaign.jpg") center/cover no-repeat;
+  background: url("/ASSETS/IMG/Index/caja2.webp") center/cover no-repeat;
 }
 
 .card-2 {
-  background: url("ASSETS/IMG/Index/mapa.jpg") center/cover no-repeat;
+  background: url("/ASSETS/IMG/Index/caja3Fondo.webp") center/cover no-repeat;
 }
 
 /* overlay oscuro */
@@ -470,12 +500,21 @@ model-viewer {
 
 
 .footer {
-  width: 100%;
+    width: 100%;
     background: linear-gradient(to top, #000, #111);
-  
+    position: relative;
+    overflow: visible;
+}
+.footer-decoration {
+    position: absolute;
+    right: 40px;
+    top: -230px;
+    width: 430px;
+    height: auto;
+    z-index: 20;
+    pointer-events: none;
 }
 
-/* FRANJA SUPERIOR */
 
 .footer-container {
     max-width: 1200px;
@@ -639,4 +678,13 @@ model-viewer {
 .market-bottom button:hover {
     background: #e52a45;
     transform: scale(1.1);
+}
+
+
+
+
+@media (max-width: 768px) {
+    .footer-decoration {
+        display: none;
+    }
 }
