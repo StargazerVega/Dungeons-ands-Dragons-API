@@ -47,10 +47,7 @@ body.dark {
     background-color: var(--DsecondBGColor);
 }
  
-body.dark > * {
-    background-color: var(--DmainBGColor);
-    color: var(--DmainTextColor);
-}
+
  
 body.dark > a {
     color: var(--DlinkColor);
@@ -85,21 +82,175 @@ body.dark > .title {
 /* =============================================================
    NAVBAR
    ============================================================= */
- 
+
+
+nav.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+.navbar-static{
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: rgba(15, 17, 28, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(210, 154, 56, 0.3);
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column-reverse;
+    align-content: flex-start; 
+}
+
 .navbar {
-    background-color: var(--DsecondBGColor);
-    border-bottom: 1px solid rgba(210, 154, 56, 0.25);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: rgba(15, 17, 28, 0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(210, 154, 56, 0.3);
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column-reverse;
+    align-content: flex-start;
 }
- 
-.navbar .nav-link {
-    color: var(--DmainTextColor);
-    transition: color 0.2s;
+
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 28px;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 30px;
+
+
 }
- 
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
-    color: var(--DtitleTextColor);
+
+.LogoVuelta {
+    display: flex;
+    align-items:end;
+    justify-content: space-between;
+    height: 36px;
+    width: auto;
+    display: block;
+    gap: 30px;
 }
+
+/* Desktop links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    margin: 0 0 0 auto;
+    padding: 0;
+}
+
+.nav-links a {
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #c9a84c;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover { 
+    color: #fff; 
+}
+.nav-links a:hover::after { 
+    width: 100%; 
+}
+
+/* Hamburger button — hidden on desktop */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: 1px solid rgba(210, 154, 56, 0.5);
+    border-radius: 6px;
+    padding: 7px 9px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #c9a84c;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger → X animation */
+.hamburger.open span:nth-child(1) { 
+    transform: translateY(7px) rotate(45deg); 
+}
+.hamburger.open span:nth-child(2) { 
+    opacity: 0; 
+}
+.hamburger.open span:nth-child(3) { 
+    transform: translateY(-7px) rotate(-45deg); 
+}
+
+/* Mobile menu — hidden by default always */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(10, 12, 20, 0.99);
+    border-top: 1px solid rgba(210, 154, 56, 0.2);
+    padding: 8px 0;
+}
+
+.mobile-menu a {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #c9a84c;
+    text-decoration: none;
+    padding: 16px 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: background 0.2s, color 0.2s;
+}
+
+.mobile-menu a:last-child { border-bottom: none; }
+
+.mobile-menu a:hover {
+    background: rgba(210, 154, 56, 0.08);
+    color: #fff;
+}
+
+/* Shown only when JS adds .open */
+.mobile-menu.open { display: flex; }
+
+
+
  
 /* =============================================================
    FILTER BUTTONS
@@ -1176,11 +1327,13 @@ body.light .features-accordion .accordion-body {
 .theme-toggle-btn {
     background-color: transparent;
     border: 1px solid rgba(255,255,255,0.15);
+    display: flex;
     color: inherit;
     padding: 0.35rem 0.85rem;
     border-radius: 5px;
     font-size: 0.82rem;
     transition: all 0.2s ease;
+    color: var(--DtitleTextColor);
 }
 
 .theme-toggle-btn:hover {
@@ -1191,6 +1344,7 @@ body.light .theme-toggle-btn {
     border-color: rgba(228, 7, 18, 0.2);
     color: var(--LmainTextColor);
 }
+
 
 body.light .theme-toggle-btn:hover {
     background-color: rgba(228, 7, 18, 0.08);
@@ -1218,15 +1372,7 @@ body.light .class-card .card-img {
     opacity: 0.82;
 }
 
-/* Overlay adaptado a fondo claro */
-body.light .class-card .card-img-overlay {
-    background: linear-gradient(
-        to top,
-        rgba(237, 244, 255, 0.96) 0%,
-        rgba(237, 244, 255, 0.78) 45%,
-        rgba(237, 244, 255, 0.15) 100%
-    );
-}
+
 
 /* Textos */
 body.light .class-card .card-title {
@@ -1235,7 +1381,7 @@ body.light .class-card .card-title {
 }
 
 body.light .class-card .card-text {
-    color: var(--LmainTextColor);
+   
     text-shadow: none;
 }
 
@@ -1627,5 +1773,19 @@ body.light ::-webkit-scrollbar-thumb:hover {
 @keyframes sparkFly {
     0%   { opacity: 1;   transform: rotate(var(--r)) translateY(0)     scaleY(1); }
     100% { opacity: 0;   transform: rotate(var(--r)) translateY(-44px) scaleY(0.3); }
+}
+
+
+
+
+@media (min-width: 577px) {
+    .hamburger    { display: none !important; }
+    .mobile-menu  { display: none !important; }
+    .nav-links    { display: flex !important; }
+}
+
+@media (max-width: 576px) {
+    .nav-links    { display: none !important; }
+    .hamburger    { display: flex; }
 }
  
