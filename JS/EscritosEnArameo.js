@@ -1,11 +1,6 @@
 AOS.init();
 
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
 
-hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-});
 
 // Video
 document.addEventListener("DOMContentLoaded", () => {
@@ -26,12 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-//NavBar
-window.addEventListener("scroll", () => {
-    const navbar = document.querySelector(".navbar");
-    navbar.classList.toggle("scrolled", window.scrollY > 60);
-});
-
 
 const rollBtn = document.getElementById("rollBtn");
 const diceImg = document.getElementById("diceImg");
@@ -39,17 +28,17 @@ const diceNumber = document.getElementById("diceNumber");
 const diceResult = document.getElementById("diceResult");
 
 rollBtn.addEventListener("click", () => {
-
+  
   diceImg.classList.add("roll");
-
+  
   setTimeout(() => {
     diceImg.classList.remove("roll");
-
+    
     const result = Math.floor(Math.random() * 20) + 1;
-
+    
     diceNumber.textContent = result;
     diceResult.textContent = "Resultado: " + result;
-
+    
     if(result === 20) {
       diceResult.style.color = "gold";
     } else if(result === 1) {
@@ -57,24 +46,25 @@ rollBtn.addEventListener("click", () => {
     } else {
       diceResult.style.color = "white";
     }
-
+    
   }, 800);
 });
 
 const carousel = document.querySelector('.main-carousel');
 
 if (carousel) {
-
-    new Flickity(carousel, {
-        cellAlign: 'left',
-        contain: true,
-        wrapAround: true,
-        autoPlay: 2500,
-        pauseAutoPlayOnHover: true,
-        imagesLoaded: true,
-        pageDots: false
-    });
-
+  
+  new Flickity(carousel, {
+    cellAlign: 'left',
+    contain: true,
+    wrapAround: true,
+    autoPlay: 2500,
+    pauseAutoPlayOnHover: true,
+    imagesLoaded: true,
+    pageDots: false
+  });
+  
 }
+
 
 
