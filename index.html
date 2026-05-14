@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dungeons & Dragons — Explora clases, hechizos, marketplace y recursos oficiales de D&D.">
+    <meta name="description" content="Dungeons & Dragons — Explore classes, spells, marketplace and official D&D resources.">
     <link rel="shortcut icon" href="ASSETS/IMG/Index/LogoPestaña.webp" />
 
     <!-- Google Fonts -->
@@ -11,10 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <!-- Flickity CSS -->
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- AOS CSS -->
@@ -27,37 +27,34 @@
     <title>Dungeons & Dragons</title>
 </head>
 <body>
-  <header>
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <img src="ASSETS/IMG/Index/LogoPestaña.webp" alt="Logo D&D" class="LogoVuelta">
-      </a>
 
-      <ul class="nav-links">
-        <li><a href="classes.html">Clases</a></li>
-        <li><a href="spells.html">Hechizos</a></li>
-      </ul>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="ASSETS/IMG/Index/LogoPestaña.webp" alt="D&D Logo" class="LogoVuelta">
+            </a>
+            <ul class="nav-links">
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="spells.html">Spells</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="classes.html">Classes</a>
+            <a href="spells.html">Spells</a>
+        </div>
+    </nav>
 
-      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="classes.html">Clases</a>
-      <a href="spells.html">Hechizos</a>
-    </div>
-  </nav>
-
-        <!-- PORTADA -->
-        <section class="PORTADA position-relative vh-100 overflow-hidden">
-            <video id="bgVideo" autoplay muted playsinline class="w-100 h-100 object-fit-cover position-absolute top-0 start-0"></video>
-            <img src="ASSETS/IMG/Index/Dungeons-and-Dragons-logo.png" alt="Dungeons and Dragons Logo" class="logoMain">
-        </section>
-    </header>
+    <!-- PORTADA -->
+    <section class="portada">
+        <video id="bgVideo" autoplay muted playsinline></video>
+        <img src="ASSETS/IMG/Index/Dungeons-and-Dragons-logo.png" alt="Dungeons and Dragons Logo" class="logoMain">
+    </section>
 
     <!-- HERO -->
     <section class="hero d-flex align-items-center">
@@ -66,42 +63,36 @@
             <p class="mb-5">Unlock digital tools, exclusive perks, and more.</p>
 
             <div class="row custom-row justify-content-center g-4">
-
                 <!-- CARD 1 -->
-<div class="col-md-5 hero-card-col">
-    <div data-aos="fade-right" class="card-custom card-dark card-clases position-relative">
-        
-        <div class="card-img">
-            <img src="ASSETS/IMG/Index/PersonajesIndex.webp" alt="Personajes D&D" class="img-fluid img-card">
-        </div>
+                <div class="col-md-5 hero-card-col">
+                    <div data-aos="fade-right" class="card-custom card-dark card-clases position-relative">
+                        <div class="card-img">
+                            <img src="ASSETS/IMG/Index/PersonajesIndex.webp" alt="D&D Characters" class="img-fluid img-card">
+                        </div>
+                        <div class="card-content">
+                            <h2>Classes Tier</h2>
+                            <p>Unlimited character slots, monthly perks, and more.</p>
+                            <a href="#seccion-clases" class="btn btn-light scroll-btn">JOIN CLASSES TIER</a>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="card-content">
-            <h2>Clases Tier</h2>
-            <p>Unlimited character slots, monthly perks, and more.</p>
-            <a href="#seccion-clases" class="btn btn-light scroll-btn">JOIN CLASES TIER</a>
-        </div>
-
-    </div>
-</div>
-
-<div class="col-md-5 hero-card-col">
-    <div data-aos="fade-left" class="card-custom card-gold card-hechizos position-relative">
-        
-        <div class="card-img">
-            <img src="ASSETS/IMG/Index/HechizosIndex.webp" alt="Hechizos D&D" class="img-fluid img-card">
-        </div>
-
-        <div class="card-content">
-            <h2>Hechizos Tier</h2>
-            <p>Share content, use homebrew and more.</p>
-            <a href="#seccion-hechizos" class="btn btn-light scroll-btn">JOIN HECHIZOS TIER</a>
-        </div>
-
-    </div>
-</div>
+                <!-- CARD 2 -->
+                <div class="col-md-5 hero-card-col">
+                    <div data-aos="fade-left" class="card-custom card-gold card-hechizos position-relative">
+                        <div class="card-img">
+                            <img src="ASSETS/IMG/Index/HechizosIndex.webp" alt="D&D Spells" class="img-fluid img-card">
+                        </div>
+                        <div class="card-content">
+                            <h2>Spells Tier</h2>
+                            <p>Share content, use homebrew and more.</p>
+                            <a href="#seccion-hechizos" class="btn btn-light scroll-btn">JOIN SPELLS TIER</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-
 
     <!-- VIDEOS -->
     <section class="videos-section-pelicula container my-5">
@@ -112,43 +103,39 @@
                     <iframe src="https://www.youtube.com/embed/IiMinixSXII" title="Dungeons & Dragons Fan Expo, London" allowfullscreen></iframe>
                 </div>
                 <h4>Dungeons & Dragons Fan Expo, London</h4>
-                <p>Join the UK's biggest convention...</p>
+                <p>Join the UK's biggest convention and meet the community.</p>
             </div>
             <div class="col-md-5 video-item">
                 <div class="ratio ratio-16x9">
-                    <iframe src="https://www.youtube.com/embed/GC4vw4tzi7w"  title="D&D en Discord" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/GC4vw4tzi7w" title="D&D on Discord" allowfullscreen></iframe>
                 </div>
-                 <h4>Dungeons & Dragons Fan Expo, London</h4>
-                <p>Meet fellow adventurers...</p>
+                <h4>Playing D&D on Discord</h4>
+                <p>Meet fellow adventurers and start your campaign online.</p>
             </div>
         </div>
     </section>
 
     <!-- LINKS SECTION -->
     <section class="links-section container my-5">
-        <h2 class="text-center mb-4">Explora el Mundo de D&D</h2>
-        <p class="text-center mb-5">Accede a recursos oficiales y expande tu aventura.</p>
+        <h2 class="text-center mb-4">Explore the World of D&D</h2>
+        <p class="text-center mb-5">Access official resources and expand your adventure.</p>
         <div class="row g-4">
-
-            <!-- CARD GRANDE -->
             <div class="col-md-8">
                 <a href="https://www.dndbeyond.com/characters" target="_blank" rel="noopener" class="card-link">
                     <div class="card-img-big">
                         <div class="overlay">
                             <h3>My Characters</h3>
-                            <p>Crea y gestiona tus personajes fácilmente.</p>
+                            <p>Create and manage your characters with ease.</p>
                         </div>
                     </div>
                 </a>
             </div>
-
-            <!-- COLUMNAS DERECHA -->
             <div class="col-md-4 d-flex flex-column gap-4">
                 <a href="https://www.dndbeyond.com/campaigns" target="_blank" rel="noopener" class="card-link">
                     <div class="card-img-small card-1">
                         <div class="overlay">
                             <h4>My Campaigns</h4>
-                            <p>Gestiona tus partidas y jugadores.</p>
+                            <p>Manage your sessions and players.</p>
                         </div>
                     </div>
                 </a>
@@ -156,12 +143,11 @@
                     <div class="card-img-small card-2">
                         <div class="overlay">
                             <h4>Maps VTT</h4>
-                            <p>Explora mapas y aventuras digitales.</p>
+                            <p>Explore maps and digital adventures.</p>
                         </div>
                     </div>
                 </a>
             </div>
-
         </div>
     </section>
 
@@ -172,37 +158,33 @@
                 <div class="col-md-10">
                     <div class="dice-video-box">
                         <div class="row align-items-center">
-
-                            <!-- IZQUIERDA -->
+                            <!-- LEFT -->
                             <div class="col-md-5 text-center">
                                 <div class="dice-container">
-                                    <img id="diceImg" src="ASSETS/IMG/Index/D20.png" alt="Dado D20" class="dice-img">
+                                    <img id="diceImg" src="ASSETS/IMG/Index/D20.png" alt="D20 Dice" class="dice-img">
                                     <span id="diceNumber">?</span>
                                 </div>
-                                <h4 id="diceResult">Resultado: ?</h4>
-                                <button id="rollBtn" class="btn btn-light mt-2">Lanzar</button>
+                                <h4 id="diceResult">Result: ?</h4>
+                                <button id="rollBtn" class="btn btn-light mt-2">Roll</button>
                             </div>
-
-                            <!-- DERECHA -->
+                            <!-- RIGHT -->
                             <div class="col-md-7">
-                                <p>Este es el dado más importante del sistema D20. Determina si tus acciones tienen éxito o fallan.</p>
-                                <h5>¿Cómo funciona?</h5>
+                                <p>This is the most important die in the D20 system. It determines whether your actions succeed or fail.</p>
+                                <h5>How does it work?</h5>
                                 <ol>
-                                    <li>Tira un dado de 20 caras.</li>
-                                    <li>Añade modificadores.</li>
-                                    <li>Compara con la dificultad.</li>
+                                    <li>Roll a 20-sided die.</li>
+                                    <li>Add your modifiers.</li>
+                                    <li>Compare with the difficulty.</li>
                                 </ol>
-                                <h5>Resultados especiales</h5>
+                                <h5>Special results</h5>
                                 <ul>
-                                    <li><strong>20:</strong> Éxito crítico</li>
-                                    <li><strong>1:</strong> Fallo crítico</li>
+                                    <li><strong>20:</strong> Critical success</li>
+                                    <li><strong>1:</strong> Critical failure</li>
                                 </ul>
                             </div>
-
-                            <div class="col-md-6 text-center">
-                                <model-viewer class="dice-model" src="ASSETS/3D/toon_dmc5_d20.glb" camera-controls auto-rotate shadow-intensity="1" exposure="1.2" alt="Modelo 3D dado D20"></model-viewer>
+                            <div class="col-md-6 text-center mt-4 mt-md-0">
+                                <model-viewer class="dice-model" src="ASSETS/3D/toon_dmc5_d20.glb" camera-controls auto-rotate shadow-intensity="1" exposure="1.2" alt="D20 3D Model"></model-viewer>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -210,166 +192,157 @@
         </div>
     </section>
 
-    <!-- PERSONAJES Y CLASES -->
+    <!-- CLASSES -->
     <section id="seccion-clases" class="characters-section container my-5" data-aos="fade-up">
         <div class="row align-items-center">
             <div class="col-md-6 text-center text-md-start">
                 <span class="section-label">Explore</span>
                 <h2>Classes & Characters</h2>
-                <p> Discover the many classes of Dungeons & Dragons — from fearless warriors
-                to powerful spellcasters. Build your character and shape your destiny.</p>
-                <button class="btn btn-custom">Explorar Clases</button>
+                <p>Discover the many classes of Dungeons & Dragons — from fearless warriors to powerful spellcasters. Build your character and shape your destiny.</p>
+                <button class="btn btn-custom">Explore Classes</button>
             </div>
             <div class="col-md-6 text-center">
-                <model-viewer src="ASSETS/3D/gelatinous_cube.glb" camera-controls style="width: 100%; height: 400px;" alt="Modelo 3D cubo gelatinoso D&D"></model-viewer>
+                <model-viewer src="ASSETS/3D/gelatinous_cube.glb" camera-controls style="width: 100%; height: 400px;" alt="D&D 3D Gelatinous Cube"></model-viewer>
             </div>
         </div>
     </section>
 
-    <!-- HECHIZOS -->
+    <!-- SPELLS -->
     <section id="seccion-hechizos" class="spells-section container my-5" data-aos="fade-up">
         <div class="row align-items-center">
             <div class="col-md-6 text-center">
-    <a href="https://nivel20.com/games/dnd-5/spells" target="_blank" rel="noopener">
-        <img src="ASSETS/IMG/Index/pngtree-spell-book-isolated-on-transparent-background-png-image_16752725.webp" 
-             alt="Hechizos Dungeons and Dragons" 
-             class="img-fluid spells-img">
-    </a>
-</div>
+                <a href="https://nivel20.com/games/dnd-5/spells" target="_blank" rel="noopener">
+                    <img src="ASSETS/IMG/Index/pngtree-spell-book-isolated-on-transparent-background-png-image_16752725.webp"
+                         alt="D&D Spells" class="img-fluid spells-img">
+                </a>
+            </div>
             <div class="col-md-6 text-center text-md-start">
-    <span class="section-label">Magic</span>
-    <h2>Spells</h2>
-    <p>
-        Master the art of magic with a wide variety of spells.
-        From devastating elemental attacks to reality-bending enchantments,
-        the power is in your hands.
-    </p>
-
-    <a href="spells.html" class="btn btn-custom">
-        Explore Spells
-    </a>
-</div>
+                <span class="section-label">Magic</span>
+                <h2>Spells</h2>
+                <p>Master the art of magic with a wide variety of spells. From devastating elemental attacks to reality-bending enchantments, the power is in your hands.</p>
+                <a href="spells.html" class="btn btn-custom">Explore Spells</a>
+            </div>
         </div>
     </section>
+
+    <!-- ANIMATED SERIES -->
     <section class="animated-series-section container my-5" data-aos="fade-up">
-
-    <div class="section-header text-center mb-4">
-        <span class="section-label">Classic Series</span>
-        <h2>Dungeons & Dragons Animated Series</h2>
-        <p>
-            A legendary 80s animated show that brought the world of D&D to life,
-            following a group of young heroes trapped in a magical realm.
-        </p>
-    </div>
-
-    <div class="video-wrapper">
-        <div class="ratio ratio-16x9 video-box">
-            <iframe 
-                src="https://www.youtube.com/embed/HOsSLxxuF4s"title="Dungeons & Dragons Animated Series"allowfullscreen></iframe>
+        <div class="section-header text-center mb-4">
+            <span class="section-label">Classic Series</span>
+            <h2>Dungeons & Dragons Animated Series</h2>
+            <p>A legendary 80s animated show that brought the world of D&D to life, following a group of young heroes trapped in a magical realm.</p>
         </div>
-    </div>
+        <div class="video-wrapper">
+            <div class="ratio ratio-16x9 video-box">
+                <iframe src="https://www.youtube.com/embed/HOsSLxxuF4s" title="Dungeons & Dragons Animated Series" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
 
-</section>
-
-    <!-- CARRUSEL MARKETPLACE -->
+    <!-- MARKETPLACE CAROUSEL -->
     <section class="carousel-section container my-5" data-aos="fade-up">
         <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap">
             <h2 class="carousel-title">New in Marketplace</h2>
         </div>
-
         <div class="main-carousel">
-
-    <div class="carousel-cell">
-        <div class="market-card">
-            <img src="ASSETS/IMG/Index/book1.jpg" alt="Astarion's Book of Hungers">
-            <div class="market-info">
-                <span>Wizards of the Coast</span>
-                <h3>Astarion's Book of Hungers</h3>
-                <div class="market-bottom">
-                    <p>$14.99</p>
-                    <button aria-label="Añadir al carrito">🛒</button>
+            <div class="carousel-cell">
+                <div class="market-card">
+                    <img src="ASSETS/IMG/Index/book1.png" alt="Astarion's Book of Hungers">
+                    <div class="market-info">
+                        <span>Wizards of the Coast</span>
+                        <h3>Astarion's Book of Hungers</h3>
+                        <div class="market-bottom">
+                            <p>14.99€</p>
+                              <a href="https://dndstore.wizards.com/eu/en" target="_blank" rel="noopener" aria-label="Buy now" class="cart-btn">
+                                🛒
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <div class="market-card">
+                    <img src="ASSETS/IMG/Index/book2.png" alt="Netheril's Fall">
+                    <div class="market-info">
+                        <span>Forgotten Realms</span>
+                        <h3>Netheril's Fall</h3>
+                        <div class="market-bottom">
+                            <p>19.99€</p>
+                            <a href="https://dndstore.wizards.com/eu/en" target="_blank" rel="noopener" aria-label="Buy now" class="cart-btn">
+                                🛒
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <div class="market-card">
+                    <img src="ASSETS/IMG/Index/book3.png" alt="Heroes of the Borderlands">
+                    <div class="market-info">
+                        <span>D&D Beyond</span>
+                        <h3>Heroes of the Borderlands</h3>
+                        <div class="market-bottom">
+                            <p>49.99€</p>
+                              <a href="https://dndstore.wizards.com/eu/en" target="_blank" rel="noopener" aria-label="Buy now" class="cart-btn">
+                                🛒
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <div class="market-card">
+                    <img src="ASSETS/IMG/Index/book4.png" alt="Astarion's Book of Hungers">
+                    <div class="market-info">
+                        <span>Wizards of the Coast</span>
+                        <h3>Astarion's Book of Hungers</h3>
+                        <div class="market-bottom">
+                            <p>14.99€</p>
+                              <a href="https://dndstore.wizards.com/eu/en" target="_blank" rel="noopener" aria-label="Buy now" class="cart-btn">
+                                🛒
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <div class="market-card">
+                    <img src="ASSETS/IMG/Index/book5.png" alt="Netheril's Fall">
+                    <div class="market-info">
+                        <span>Forgotten Realms</span>
+                        <h3>Netheril's Fall</h3>
+                        <div class="market-bottom">
+                            <p>19.99€</p>
+                              <a href="https://dndstore.wizards.com/eu/en" target="_blank" rel="noopener" aria-label="Buy now" class="cart-btn">
+                                🛒
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-cell">
+                <div class="market-card">
+                    <img src="ASSETS/IMG/Index/book6.jpg" alt="Borderlands">
+                    <div class="market-info">
+                        <span>D&D Beyond</span>
+                        <h3>Borderlands</h3>
+                        <div class="market-bottom">
+                            <p>49.99€</p>
+                              <a href="https://dndstore.wizards.com/eu/en" target="_blank" rel="noopener" aria-label="Buy now" class="cart-btn">
+                                🛒
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="carousel-cell">
-        <div class="market-card">
-            <img src="ASSETS/IMG/Index/book2.jpg" alt="Netheril's Fall">
-            <div class="market-info">
-                <span>Forgotten Realms</span>
-                <h3>Netheril's Fall</h3>
-                <div class="market-bottom">
-                    <p>$19.99</p>
-                    <button aria-label="Añadir al carrito">🛒</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="carousel-cell">
-        <div class="market-card">
-            <img src="ASSETS/IMG/Index/book3.jpg" alt="Heroes of the Borderlands">
-            <div class="market-info">
-                <span>D&D Beyond</span>
-                <h3>Heroes of the Borderlands</h3>
-                <div class="market-bottom">
-                    <p>$49.99</p>
-                    <button aria-label="Añadir al carrito">🛒</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="carousel-cell">
-        <div class="market-card">
-            <img src="" alt="Astarion's Book of Hungers">
-            <div class="market-info">
-                <span>Wizards </span>
-                <h3>Astarion's Book of Hungers</h3>
-                <div class="market-bottom">
-                    <p>$14.99</p>
-                    <button aria-label="Añadir al carrito">🛒</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="carousel-cell">
-        <div class="market-card">
-            <img src="ASSETS/IMG/Index/book2.jpg" alt="Netheril's Fall">
-            <div class="market-info">
-                <span>Forgotten Realms</span>
-                <h3>Netheril's Fall</h3>
-                <div class="market-bottom">
-                    <p>$19.99</p>
-                    <button aria-label="Añadir al carrito">🛒</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="carousel-cell">
-        <div class="market-card">
-            <img src="ASSETS/IMG/Index/criatura.webp" alt="Heroes of the Borderlands">
-            <div class="market-info">
-                <span>D&D Beyond</span>
-                <h3>Borderlands</h3>
-                <div class="market-bottom">
-                    <p>$49.99</p>
-                    <button aria-label="Añadir al carrito"><a href="https://www.instagram.com/dndwizards/?hl=es">🛒</a></button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-socials">
-              <a href="https://www.instagram.com/dndwizards/?hl=es" target="_blank" rel="noopener" aria-label="Instagram">
+                <a href="https://www.instagram.com/dndwizards/?hl=es" target="_blank" rel="noopener" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
                 <a href="https://x.com/Wizards_DnD" target="_blank" rel="noopener" aria-label="Twitter / X">
@@ -383,20 +356,16 @@
                 </a>
             </div>
             <div class="footer-links">
-                <a href="#">Política de privacidad</a>
-                <a href="#">Términos de uso</a>
-                <a href="#">Información de la empresa</a>
-            
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Company Info</a>
             </div>
-            
         </div>
-         <img src="ASSETS/IMG/Index/criatura.webp" 
-         alt="Decoración D&D" 
-         class="footer-decoration">
+        <img src="ASSETS/IMG/Index/criatura.webp" alt="D&D Decoration" class="footer-decoration">
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc4s9bIOgUxi8T/jzmDKFGRy7B4+cGPGXpGZ3HXGmNdgGv" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <!-- Flickity JS -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <!-- AOS JS -->
