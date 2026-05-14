@@ -59,7 +59,7 @@ function renderClassCards(classes) {
         var cardHTML =
             '<div class="classes col-6 col-sm-4 col-md-3 col-xl-2 ' + category + '">' +
                 '<div class="card class-card">' +
-                    '<img src="./ASSETS/IMG/' + imgName + '" class="card-img" alt="' + cls.name + '"' +
+                    '<img src="https://stargazervega.github.io/Dungeons-ands-Dragons-API/ASSETS/IMG/' + imgName + '" class="card-img" alt="' + cls.name + '"' +
                         ' onerror="this.style.filter=\'grayscale(1) opacity(0.25)\'">' +
                     '<div class="card-img-overlay d-flex flex-column justify-content-end">' +
                         '<h5 class="card-title mb-1">' + cls.name + '</h5>' +
