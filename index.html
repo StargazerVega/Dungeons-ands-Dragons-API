@@ -27,28 +27,28 @@
     <title>Dungeons & Dragons</title>
 </head>
 <body>
-    <header>
-  <nav class="navbar navbar-expand-sm navbar-dark">
-    <div class="container-fluid">
-      <a href="index.html">
-        <img src="ASSETS/IMG/Index/LogoPestaña.webp" alt="Logo Dungeons and Dragons" class="LogoVuelta">
+  <header>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="ASSETS/IMG/Index/LogoPestaña.webp" alt="Logo D&D" class="LogoVuelta">
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
-        aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <ul class="nav-links">
+        <li><a href="classes.html">Clases</a></li>
+        <li><a href="spells.html">Hechizos</a></li>
+      </ul>
 
-      <div class="collapse navbar-collapse" id="mynavbar">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="classes.html">Clases</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="spells.html">Hechizos</a>
-          </li>
-        </ul>
-      </div>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="classes.html">Clases</a>
+      <a href="spells.html">Hechizos</a>
     </div>
   </nav>
 
