@@ -359,7 +359,7 @@ iframe { border: none; border-radius: 10px; }
 }
 
 .card-img-big {
-    background: url("./ASSETS/IMG/Index/fondoCaracters.webp") center/cover no-repeat;
+    background: url("../ASSETS/IMG/Index/fondoCaracters.webp") center/cover no-repeat;
     height: 400px;
     border-radius: 15px;
     position: relative;
@@ -375,8 +375,8 @@ iframe { border: none; border-radius: 10px; }
     border: 2px solid rgba(210, 154, 56, 0.25);
 }
 
-.card-1 { background: url("./ASSETS/IMG/Index/caja2.webp") center/cover no-repeat; }
-.card-2 { background: url("./ASSETS/IMG/Index/caja3Fondo.webp") center/cover no-repeat; }
+.card-1 { background: url("../ASSETS/IMG/Index/caja2.webp") center/cover no-repeat; }
+.card-2 { background: url("../ASSETS/IMG/Index/caja3Fondo.webp") center/cover no-repeat; }
 
 .overlay {
     position: absolute;
