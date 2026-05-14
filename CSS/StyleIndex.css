@@ -154,6 +154,10 @@ nav.navbar {
     padding: 8px 0;
     display: none;
 }
+.mobile-menu.open {
+    display: flex; /* o block según tu diseño */
+    flex-direction: column;
+}
 
 .mobile-menu a {
     font-family: 'Cinzel', serif;
