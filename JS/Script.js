@@ -1,5 +1,3 @@
-//VARIABLES
-
 //variables para columnas de elementos especificos por clase
 var CLASS_SPECIFIC_LABELS = {
     rage_count: 'Rages',
