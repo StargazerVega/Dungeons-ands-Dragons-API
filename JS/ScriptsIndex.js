@@ -19,22 +19,6 @@ mobileMenu.querySelectorAll('a').forEach(link => {
 });
 
 // ── BACKGROUND VIDEO LOOP
-const video = document.getElementById('bgVideo');
-const videos = [
-    'ASSETS/Videos/video1.mp4',
-    'ASSETS/Videos/video2.mp4'
-];
-let videoIndex = 0;
-
-video.src = videos[videoIndex];
-video.play();
-
-video.addEventListener('ended', () => {
-    videoIndex = (videoIndex + 1) % videos.length;
-    video.src = videos[videoIndex];
-    video.play();
-});
-
 // ── D20 DICE ROLLER
 const rollBtn    = document.getElementById('rollBtn');
 const diceImg    = document.getElementById('diceImg');
